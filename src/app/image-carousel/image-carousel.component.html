@@ -1,0 +1,30 @@
+<div class="container">
+  <div id="{{carouselName}}" class="carousel slide" [class.carousel-dark]="colorScheme.lightMode" data-bs-pause="false">
+    <div class="carousel-indicators">
+      <button *ngFor="let image of images; index as i" [attr.data-bs-target]="'#'+carouselName" [attr.data-bs-slide-to]="i"
+        [attr.aria-label]="'Slide '+ (i+1)" [class.active]="i === 0" [attr.aria-current]="i === 0"></button>
+    </div>
+    <!--style="min-height:50vw; max-height:75vh;"-->
+    <!--style="height:60vh;"-->
+    <div class="carousel-inner d-flex align-items-center" style="height: 50vw">
+      <div class="carousel-item" *ngFor="let image of images; index as i" [class.active]="i === 0"
+        [attr.data-bs-interval]="interval ?? 1500" data-bs-ride="carousel">
+        <img alt="{{image.src}}" src="{{image.src}}" class="w-100 h-100" [class.active]="i === 0" [attr.aria-current]="i === 0">
+        <div class="carousel-caption d-none d-md-block">
+          <h5 *ngIf="image.title">{{image.title}}</h5>
+          <p *ngIf="image.description">{{image.description}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="invisible">
+      <button class="carousel-control-prev" type="button" [attr.data-bs-target]="'#'+carouselName" data-bs-slide="prev" id="backButton">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" [attr.data-bs-target]="'#'+carouselName" data-bs-slide="next" id="nextButton">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+</div>

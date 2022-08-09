@@ -1,0 +1,137 @@
+<div class="text-center">
+  <h4>Thank you for your generous donation to our cause, we couldn't do it without you.</h4>
+  <h5>Want to get your organization out their while also supporting our teams?</h5>
+  <a class="h5" [class.link-info]="colorScheme.darkMode" routerLink="./options">Become a sponsor</a>
+  <a data-bs-toggle="modal" data-bs-target="#sponsorModal" id="displaySponsorOptions"></a>
+</div>
+<div class="modal fade" id="contactUsPopup" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content color-scheme-secondary">
+      <div class="modal-header color-scheme-tertiary">
+        <h5 class="modal-title" id="staticBackdropLabel">Attention</h5>
+        <button type="button" class="btn-close" [class.btn-close-white]="colorScheme.darkMode" data-bs-dismiss="modal" aria-label="Close"
+          routerLink="/sponsors"></button>
+      </div>
+      <div class="modal-body color-scheme-quaternary"> The following page will open up an email draft.<br>review it if you want, then hit
+        send and we will get back to you as soon as possible </div>
+      <div class="modal-footer color-scheme-tertiary">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" routerLink="/sponsors">Cancel</button>
+        <a type="button" class="btn btn-primary"
+          href="mailto:snoco4htech@gmail.com?subject=I Want To Become A Botsmith Sponsor&body=Hello, my company is {{form.companyName}} and I would like to sponsor your program with ${{form.amount}} {{form.companyHomepage ? '%0d%0a%0d%0aHere is a link our company homepage:%0d%0a'+form.companyHomepage : ''}}{{form.additionalInfo ? '%0d%0a%0d%0aHere is some additional information that I would like you to know:%0d%0a' + form.additionalInfo : ''}}{{form.companyLogo ? '%0d%0a%0d%0aHere is a link our company logo:%0d%0a'+form.companyLogo : ''}}">
+          Continue &rarr;</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="sponsorModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="sponsorModalLabel" aria-hidden="true">
+  <!--modal-dialog-centered-->
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+    <div class="modal-content color-scheme-secondary">
+      <div class="modal-header color-scheme-tertiary">
+        <h5 class="modal-title" id="sponsorModalLabel">Sponsorship Info</h5>
+        <button type="button" class="btn-close" [class.btn-close-white]="colorScheme.darkMode" data-bs-dismiss="modal" aria-label="Close"
+          routerLink="/sponsors"></button>
+      </div>
+      <div class="modal-body color-scheme-quaternary">
+        <div class="btn-group btn-group-sm w-100" role="group" aria-label="Basic example">
+          <button type="button" class="btn" [class.btn-outline-warning]="colorScheme.darkMode"
+            [class.btn-outline-danger]="colorScheme.lightMode" routerLinkActive="active" aria-currentWhenActive="step"
+            routerLink="/sponsors/options">Options</button>
+          <button type="button" class="btn" [class.btn-outline-warning]="colorScheme.darkMode"
+            [class.btn-outline-danger]="colorScheme.lightMode" routerLinkActive="active" aria-currentWhenActive="step"
+            routerLink="/sponsors/contact-us">Contact Us</button>
+        </div>
+        <!--<h4 class="text-center">Take a look at the sponsorships options below and contact us at <a href="mailto:snoco4htech@gmail.com"
+            [class.link-info]="colorScheme.darkMode">snoco4htech@gmail.com</a> to become a sponsor</h4>-->
+        <div class="container py-2" [style.display]="link.endsWith('options') ? 'block' : 'none'">
+          <h5>Take a look at the options below and click the button above to get in touch with us</h5>
+          <div class="accordion" id="SponsorOptions">
+            <div class="accordion-item" *ngFor="let option of sponsorOptions; index as i">
+              <h2 class="accordion-header" id="Heading{{i+1}}-2">
+                <button class="accordion-button color-scheme-secondary {{i===0 ? '' : 'collapsed'}}" type="button" data-bs-toggle="collapse"
+                  attr.data-bs-target="#Body{{i+1}}-2" attr.aria-expanded="{{i===0 ? 'true' : 'false'}}" attr.aria-controls="Body{{i+1}}-2">
+                  <strong>${{option.amount}}</strong>
+                </button>
+              </h2>
+              <div id="Body{{i+1}}-2" class="accordion-collapse collapse {{i===0 ? 'show' : 'collapse'}}"
+                attr.aria-labelledby="Heading{{i+1}}-2" data-bs-parent="#SponsorOptions">
+                <div class="accordion-body color-scheme-tertiary">
+                  <ul>
+                    <li *ngFor="let benefit of option.benefits">
+                      {{benefit}}
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container color-scheme-tertiary py-3" [style.display]="link.endsWith('contact-us') ? 'block' : 'none'">
+          <h3 class="text-center">Fill out the form below or contact us directly at <br>
+            <a href="mailto:snoco4htech@gmail.com" [class.link-info]="colorScheme.darkMode">snoco4htech@gmail.com</a>
+          </h3>
+          <form>
+            <div class="mb-3">
+              <label for="companyName" class="form-label">Company Name</label>
+              <input type="text" class="form-control" id="companyName" [(ngModel)]="form.companyName" name="company-name"
+                placeholder="Your company's name" [class.is-invalid]="!form.companyName" [class.is-valid]="form.companyName">
+            </div>
+            <div class="mb-3">
+              <label for="companyHomepage" class="form-label">Company Homepage</label>
+              <input type="url" class="form-control" id="companyHomepage" [(ngModel)]="form.companyHomepage" name="company-name"
+                placeholder="A link to your company's homepage" [class.is-invalid]="!isValidUrl(form.companyHomepage)"
+                [class.is-valid]="isValidUrl(form.companyHomepage)">
+            </div>
+            <div class="mb-3">
+              <label for="amount" class="form-label">Amount:</label>
+              <input class="form-control" type="number" id="amount" name="amount" step="100" min="100" max="10000" [(ngModel)]="form.amount"
+                [class.is-invalid]="form.amount < 100" [class.is-valid]="form.amount >= 100">
+            </div>
+            <div class="mb-3" [style.display]="form.amount >= 500 ? 'inline':'none'">
+              <label for="companyLogo" class="form-label">Company Logo</label>
+              <input type="url" class="form-control" id="companyLogo" [(ngModel)]="form.companyLogo" name="company-name"
+                placeholder="A link to your company logo" [class.is-invalid]="form.companyLogo && !isValidUrl(form.companyLogo)"
+                [class.is-valid]="isValidUrl(form.companyLogo)">
+            </div>
+            <div class="mb-3">
+              <label for="additionalInfo" class="form-label">Additional Info</label>
+              <input type="text" class="form-control" [(ngModel)]="form.additionalInfo"
+                placeholder="Put any additional information for us here." name="additional-info" [class.is-valid]="form.additionalInfo">
+            </div>
+            <button type="submit" class="btn" [class.btn-success]="form.valid" [class.btn-danger]="!form.valid" data-bs-toggle="modal"
+              data-bs-target="#contactUsPopup" [class.disabled]="!form.valid">Submit</button>
+          </form>
+        </div>
+      </div>
+      <div class="modal-footer color-scheme-tertiary">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" routerLink="/sponsors">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<div class="container accordion" id="Sponsors">
+  <div class="accordion-item" *ngFor="let sponsor of sponsors; index as i">
+    <h2 class="accordion-header" id="Heading{{i+1}}">
+      <button class="accordion-button color-scheme-secondary  {{i===0 ? '' : 'collapsed'}}" type="button" data-bs-toggle="collapse"
+        attr.data-bs-target="#Body{{i+1}}" attr.aria-expanded="{{i===0 ? 'true' : 'false'}}" attr.aria-controls="Body{{i+1}}">
+        <strong>{{sponsor.year}}</strong>
+      </button>
+    </h2>
+    <div id="Body{{i+1}}" class="accordion-collapse collapse {{i===0 ? 'show' : 'collapse'}}" attr.aria-labelledby="Heading{{i+1}}"
+      data-bs-parent="#Sponsors">
+      <div class="accordion-body color-scheme-tertiary">
+        <ul>
+          <li *ngFor="let sponsorship of sponsor.sponsors">
+            <a *ngIf="sponsorship.link" [class.text-info]="colorScheme.darkMode" href="{{sponsorship.link}}"
+              target="_blank">{{sponsorship.sponsor}}</a>
+            <span *ngIf="!sponsorship.link">{{sponsorship.sponsor}}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

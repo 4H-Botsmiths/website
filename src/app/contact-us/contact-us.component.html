@@ -1,0 +1,75 @@
+<!-- Modal -->
+<div class="modal fade" id="contactUsPopup" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content color-scheme-secondary">
+      <div class="modal-header color-scheme-tertiary">
+        <h5 class="modal-title" id="staticBackdropLabel">Attention</h5>
+        <button type="button" class="btn-close" [class.btn-close-white]="colorScheme.darkMode" data-bs-dismiss="modal"
+          aria-label="Close"></button>
+      </div>
+      <div class="modal-body color-scheme-quaternary"> The following page will open up an email draft.<br>review it if you want, then hit
+        send and we will get back to you as soon as possible </div>
+      <div class="modal-footer color-scheme-tertiary">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <a type="button" class="btn btn-primary"
+          href="mailto:snoco4htech@gmail.com?subject=I Want To Become A Botsmith&body=Hello, my name is {{form.name}} and I am interested in the following programs:%0d%0a{{form.programs.frc ? '- FRC%0d%0a' : ''}}{{form.programs.ftc ? '- FTC%0d%0a' : ''}}{{form.programs.fll.challenge ? '- FLL Challenge%0d%0a' : ''}}{{form.programs.fll.challenge ? '- FLL Explore%0d%0a' : ''}}{{form.programs.fll.challenge ? '- Minecraft%0d%0a' : ''}}{{form.additionalInfo ? '%0d%0aHere is some additional information that I would like you to know:%0d%0a' + form.additionalInfo : ''}}">
+          Continue &rarr;</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container color-scheme-tertiary py-3">
+  <h3 class="text-center">Fill out the form below or contact us directly at <br>
+    <a href="mailto:snoco4htech@gmail.com" [class.link-info]="colorScheme.darkMode">snoco4htech@gmail.com</a>
+  </h3>
+  <h5 class="text-center">If you looking to become a sponsor fill out <a [class.link-info]="colorScheme.darkMode"
+      routerLink="/sponsors/contact-us">this form</a></h5>
+  <form>
+    <div class="mb-3">
+      <label for="firstName" class="form-label">First Name</label>
+      <input type="text" class="form-control" id="firstName" [(ngModel)]="form.name" name="first-name" [class.is-invalid]="!form.name"
+        [class.is-valid]="form.name">
+    </div>
+    <fieldset class="row mb-3">
+      <legend class="col-form-label col-sm-2 pt-0">What Team(s) Are You Interested In?</legend>
+      <div class="col-sm-10">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="frcCheckbox" (change)="form.programs.frc = !form.programs.frc"
+            [class.is-invalid]="!form.programs.valid" [class.is-valid]="form.programs.frc">
+          <label class="form-check-label" for="frcCheckbox"> FRC </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="ftcCheckbox" (change)="form.programs.ftc = !form.programs.ftc"
+            [class.is-invalid]="!form.programs.valid" [class.is-valid]="form.programs.ftc">
+          <label class="form-check-label" for="ftcCheckbox"> FTC </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="fllChallengeCheckbox"
+            (change)="form.programs.fll.challenge= !form.programs.fll.challenge" [class.is-invalid]="!form.programs.valid"
+            [class.is-valid]="form.programs.fll.challenge">
+          <label class="form-check-label" for="fllChallengeCheckbox"> FLL Challenge </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="fllExploreCheckbox"
+            (change)="form.programs.fll.explore= !form.programs.fll.explore" [class.is-invalid]="!form.programs.valid"
+            [class.is-valid]="form.programs.fll.explore">
+          <label class="form-check-label" for="fllExploreCheckbox"> FLL Explore </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="minecraftCheckbox"
+            (change)="form.programs.minecraft = !form.programs.minecraft" [class.is-invalid]="!form.programs.valid"
+            [class.is-valid]="form.programs.minecraft">
+          <label class="form-check-label" for="minecraftCheckbox"> Minecraft </label>
+        </div>
+      </div>
+    </fieldset>
+    <div class="mb-3">
+      <label for="additionalInfo" class="form-label">Additional Info</label>
+      <input type="text" class="form-control" [(ngModel)]="form.additionalInfo" placeholder="Put any additional information for us here."
+        name="additional-info" [class.is-valid]="form.additionalInfo">
+    </div>
+    <button type="submit" class="btn" [class.btn-success]="form.valid" [class.btn-danger]="!form.valid" data-bs-toggle="modal"
+      data-bs-target="#contactUsPopup" [class.disabled]="!form.valid">Submit</button>
+  </form>
+</div>

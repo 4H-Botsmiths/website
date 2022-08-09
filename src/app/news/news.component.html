@@ -1,0 +1,44 @@
+<div class="mx-4">
+  <div class="position-relative">
+    <div class="btn-group position-absolute top-0 end-0">
+      <button type="button" class="btn dropdown-toggle" [class.btn-outline-warning]="colorScheme.darkMode"
+        [class.btn-outline-danger]="colorScheme.lightMode" data-bs-toggle="dropdown" aria-expanded="false"> Filters </button>
+      <fieldset class="dropdown-menu px-2 color-scheme-tertiary">
+        <div>
+          <div class="form-check" *ngFor="let category of categories">
+            <input class="form-check-input" type="checkbox" id="{{category}}Checkbox" (change)="toggleFilter(category)">
+            <label class="form-check-label" for="{{category}}Checkbox" [innerHtml]="category"></label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+    <!--class="pt-5 pt-md-1"-->
+    <div class="pt-2 pt-md-0">
+      <h3 class="text-start text-md-center">News And Updates</h3>
+      <h5 class="text-start text-md-center">Click a post below for more info</h5>
+    </div>
+  </div>
+</div>
+<div class="container ">
+  <div class="row row-cols-auto row-cols-md-2 row-cols-xl-3 align-items-center justify-content-center">
+    <div class="col py-3" *ngFor="let article of selectedNews">
+      <div class="card color-scheme-tertiary" style="cursor: pointer;">
+        <div *ngIf="article.header" class="card-header text-center color-scheme-quaternary" [innerHTML]="article.header"></div>
+        <img *ngIf="article.image" src="{{article.image}}" alt="{{article.image}}" class="card-img-top px-2 pt-2">
+        <div class="card-body color-scheme-tertiary" *ngIf="article.title || article.description || article.links || article.buttons">
+          <h5 class="card-title stretched-link" routerLink="{{article.title.split(' ').join('-')}}" [innerHTML]="article.title"></h5>
+          <h6 class="card-subtitle mb-2"><span class="badge rounded-pill" [class.text-bg-warning]="colorScheme.darkMode"
+              [class.text-bg-danger]="colorScheme.lightMode" *ngFor="let category of article.categories" [innerHTML]="category"></span></h6>
+          <p class="card-text" *ngIf="article.description" [innerHTML]="article.description" style="max-height: 25vh; overflow-y:hidden;">
+          </p>
+          <p *ngIf="article.description?.includes('<br>')">...</p>
+          <a *ngFor="let link of (article.links || [])" class="card-link" [class.text-info]="colorScheme.darkMode" href="{{link.href}}"
+            target="_blank" [innerHTML]="link.name"></a>
+          <a *ngFor="let button of (article.buttons || [])" class="btn btn-primary" href="{{button.href}}" target="_blank"
+            [innerHTML]="button.name"></a>
+        </div>
+        <div *ngIf="article.footer" class="card-footer text-center color-scheme-quaternary" [innerHTML]="article.footer"></div>
+      </div>
+    </div>
+  </div>
+</div>

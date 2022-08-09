@@ -1,0 +1,48 @@
+[
+  {
+    "amount": 100,
+    "benefits": [
+      "Company On Documentation",
+      "Company Name On Website"
+    ]
+  },
+  {
+    "amount": 500,
+    "benefits": [
+      "Company On Documentation",
+      "Company Name On Website",
+      "Company On T-Shirts"
+    ]
+  },
+  {
+    "amount": 1000,
+    "benefits": [
+      "Company On Documentation",
+      "Company Name On Website",
+      "Company Logo On Website Homepage",
+      "Company On T-Shirts",
+      "Company On Banner"
+    ]
+  },
+  {
+    "amount": 1500,
+    "benefits": [
+      "Company On Documentation",
+      "Company Name On Website",
+      "Company Logo On Website Homepage",
+      "Company On T-Shirts",
+      "Company On Robot"
+    ]
+  },
+  {
+    "amount": 2000,
+    "benefits": [
+      "Company On Documentation",
+      "Company Name On Website",
+      "Company Logo On Website Homepage",
+      "Company On T-Shirts",
+      "Company On Banner",
+      "Company On Robot"
+    ]
+  }
+]

@@ -1,0 +1,28 @@
+  {
+    "header": "Test Header",
+    "image": "/assets/images/logo.png",
+    "title": "Test Title",
+    "categories": [
+      "FRC",
+      "FTC",
+      "FLL",
+      "FLL Challenge",
+      "FLL Explore",
+      "Minecraft",
+      "Evergreen State Fair"
+    ],
+    "description": "Test Description",
+    "links": [
+      {
+        "name": "Test Link",
+        "href": "Test URL"
+      }
+    ],
+    "buttons": [
+      {
+        "name": "Test Button",
+        "href": "Test URL"
+      }
+    ],
+    "footer": "Test Footer"
+  }

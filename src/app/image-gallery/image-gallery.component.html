@@ -1,0 +1,9 @@
+<div class="container">
+  <div class="row row-cols-auto justify-content-around align-items-center">
+    <div class="col" *ngFor="let image of getImages()">
+      <img alt="{{image.title || image.src}}" src="{{image.src}}" class="w-100">
+      <h5 *ngIf="image.title" class="text-center">{{image.title}}</h5>
+      <p *ngIf="image.description" class="text-center">{{image.description}}</p>
+    </div>
+  </div>
+</div>

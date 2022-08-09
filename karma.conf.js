@@ -7,9 +7,11 @@ module.exports = function (config) {
     frameworks: ['jasmine', '@angular-devkit/build-angular'],
     plugins: [
       require('karma-jasmine'),
-      require('karma-chrome-launcher'),
+      require('karma-edge-launcher'),
+      require('karma-safari-launcher'),
       require('karma-jasmine-html-reporter'),
       require('karma-coverage'),
+      // @ts-ignore
       require('@angular-devkit/build-angular/plugins/karma')
     ],
     client: {
@@ -37,8 +39,12 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome'],
+    browsers: ['Safari'],
     singleRun: false,
-    restartOnFileChange: true
+    restartOnFileChange: true,
+    ChromeHeadlessCI: {
+      base: 'ChromeHeadless',
+      flags: ['--no-sandbox']
+    }
   });
 };

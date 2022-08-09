@@ -1,0 +1,18 @@
+<button type="button" routerLink="../" class="btn ms-3" [class.btn-outline-warning]="colorScheme.darkMode"
+  [class.btn-outline-danger]="colorScheme.lightMode">&larr; Back</button>
+<div class="container py-3 d-flex justify-content-center">
+  <div class="card color-scheme-tertiary" style="min-width: 50vw; max-width:75vw">
+    <div *ngIf="post.header" class="card-header text-center" [innerHTML]="post.header"></div>
+    <img *ngIf="post.image" src="{{post.image}}" alt="{{post.image}}" class="card-img-top">
+    <div class="card-body" *ngIf="post.title || post.description || post.links || post.buttons">
+      <h5 class="card-title" *ngIf="post.title" [innerHTML]="post.title"></h5>
+      <h6 class="card-subtitle mb-2 text-muted"></h6>
+      <p class="card-text" *ngIf="post.description" [innerHTML]="post.description"></p>
+      <a *ngFor="let link of (post.links || [])" class="card-link" [class.text-info]="colorScheme.darkMode" href="{{link.href}}"
+        target="_blank" [innerHTML]="link.name"></a>
+      <a *ngFor="let button of (post.buttons || [])" class="btn btn-primary" href="{{button.href}}" target="_blank"
+        [innerHTML]="button.name"></a>
+    </div>
+    <div *ngIf="post.footer" class="card-footer text-center" [innerHTML]="post.footer"></div>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+[
+  {
+    "type": "file",
+    "path": "20220306_120130.jpg",
+    "name": "frc team"
+  },
+  {
+    "type": "file",
+    "path": "KIMG1235.JPG",
+    "name": "ftc team"
+  },
+  {
+    "type": "file",
+    "path": "Screen_Shot_2022-05-20_at_8.14.26_PM.png",
+    "name": "minecraft team"
+  },
+  {
+    "type": "file",
+    "name": "logo",
+    "path": "logo.png"
+  },
+  {
+    "type": "file",
+    "path": "IMG_1009.jpeg",
+    "name": "Robot Arm"
+  },
+  {
+    "type": "directory",
+    "path": "sponsors"
+  },
+  {
+    "type": "directory",
+    "path": "frc"
+  },
+  {
+    "type": "directory",
+    "path": "ftc"
+  },
+  {
+    "type": "directory",
+    "path": "fll"
+  },
+  {
+    "type": "directory",
+    "path": "minecraft"
+  }
+]
