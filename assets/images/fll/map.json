@@ -1,0 +1,10 @@
+[
+  {
+    "type": "directory",
+    "path": "explore"
+  },
+  {
+    "type": "directory",
+    "path": "challenge"
+  }
+]
