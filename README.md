@@ -1,4 +1,6 @@
-# Website
+# 4-H Botsmiths Website
+[![Deploy to GitHub Pages via angular-cli-ghpages](https://github.com/4H-Botsmiths/website/actions/workflows/deploy.yml/badge.svg)](https://github.com/4H-Botsmiths/website/actions/workflows/deploy.yml)
+[![pages-build-deployment](https://github.com/4H-Botsmiths/website/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/4H-Botsmiths/website/actions/workflows/pages/pages-build-deployment)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.6.
 View live deployment [here](https://4h-botsmiths.github.io/website)
