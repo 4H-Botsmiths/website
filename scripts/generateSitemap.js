@@ -6,7 +6,7 @@ const path = require('path');
 const posts = require('../src/app/news/news.json');
 const routes = ['home', 'news', 'sponsors', 'contact-us', 'programs/minecraft', 'programs/fll/explore', 'programs/fll/challenge', 'programs/ftc', 'programs/frc'];
 
-const sitemap = [...routes, ...posts.map(post => `news/${post.title.split(' ').join('-')}`)];
+const sitemap = [...routes, ...posts.map(post => `news/${post.title.split(' ').join('-').split('-&-').join('-')}`)];
 
 fs.writeFileSync(path.join(__dirname, '../src/assets/sitemap.xml'),
   `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
