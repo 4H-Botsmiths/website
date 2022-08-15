@@ -5,7 +5,7 @@ on:
   # Triggers the workflow on push or pull request events but only for the "master" branch
   push:
     branches: [ "master" ]
-    
+    paths: [ "/src/app/news/news.json", "/scripts/generateSitemap.js" ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -22,4 +22,25 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 18.x
 
+      - run: |
+        npm install
+        npm run generate-sitemap
+        git config --local user.email "action@github.com"
+          git config --local user.name "github-actions"
+          git add --all
+          if [ -z "$(git status --porcelain)" ]; then
+             echo "::set-output name=push::false"
+          else
+             git commit -m "Updated Sitemap" -a
+             echo "::set-output name=push::true"
+          fi
+
+      - name: Push changes
+        if: steps.commit.outputs.push == 'true'
+        uses: ad-m/github-push-action@master
+        with:
+           github_token: ${{ secrets.GH_TOKEN }}

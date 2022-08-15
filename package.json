@@ -8,6 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "add-image": "scripts/addImage.js",
+    "generate-sitemap": "scripts/generateSitemap.js",
     "lint": "ng lint"
   },
   "private": true,
