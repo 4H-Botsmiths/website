@@ -10,7 +10,7 @@ export class MetaService {
 
   constructor(private meta: Meta, private title: Title) { }
   /**@deprecated Use `updateDescription()` and `updateKeywords()` instead*/
-  updateMetaTags(tags: { description?: string, keywords?: string[] }) {
+  updateMetaTags(tags: { description?: string, keywords?: string[]; }) {
     this.meta.updateTag({ name: 'description', content: tags.description ?? '' }, 'name=\'description\'');
     const keywords = ['4-H', '4H', 'Botsmiths', 'Robotics', 'Snohomish', 'FIRST'];
     tags.keywords ? keywords.push(...tags.keywords) : undefined;
@@ -21,6 +21,7 @@ export class MetaService {
 
   updateDescription(description: string) {
     this.meta.updateTag({ name: 'description', content: description ?? '' }, 'name=\'description\'');
+    this.meta.updateTag({ name: 'og:description', content: description ?? '' }, 'name=\'og:description\'');
   }
 
   updateKeywords(keywords: string[]) {
@@ -33,5 +34,6 @@ export class MetaService {
 
   updateTitle(title: string) {
     this.title.setTitle(title + ' · 4-H Botsmiths');
+    this.meta.updateTag({ name: 'og:title', content: title ?? '' }, 'name=\'og:title\'');
   }
 }
