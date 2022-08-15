@@ -43,7 +43,7 @@ jobs:
           npm run ng deploy --base-href=/website/ --name="github-actions" --email="action@github.com"
 
   upload:
-  needs: build
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
