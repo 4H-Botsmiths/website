@@ -27,17 +27,17 @@ jobs:
           node-version: 18.x
 
       - run: |
-        npm install
-        npm run generate-sitemap
-        git config --local user.email "action@github.com"
-          git config --local user.name "github-actions"
-          git add --all
-          if [ -z "$(git status --porcelain)" ]; then
-             echo "::set-output name=push::false"
-          else
-             git commit -m "Updated Sitemap" -a
-             echo "::set-output name=push::true"
-          fi
+          npm install
+          npm run generate-sitemap
+          git config --local user.email "action@github.com"
+            git config --local user.name "github-actions"
+            git add --all
+            if [ -z "$(git status --porcelain)" ]; then
+               echo "::set-output name=push::false"
+            else
+               git commit -m "Updated Sitemap" -a
+               echo "::set-output name=push::true"
+            fi
 
       - name: Push changes
         if: steps.commit.outputs.push == 'true'
