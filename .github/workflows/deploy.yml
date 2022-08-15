@@ -42,6 +42,10 @@ jobs:
           ####
           npm run ng deploy --base-href=/website/ --name="github-actions" --email="action@github.com"
 
+  upload:
+  needs: build
+    runs-on: ubuntu-latest
+    steps:
       - name: Checkout
         uses: actions/checkout@v3
         with:
@@ -54,7 +58,7 @@ jobs:
           path: '.'
 
   deploy:
-    needs: build
+    needs: [build, upload]
     environment:
       name: gh-pages
       url: ${{ steps.deployment.outputs.page_url }}
