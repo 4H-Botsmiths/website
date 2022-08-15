@@ -36,3 +36,12 @@ jobs:
           # npm run e2e -- --protractor-config=e2e/protractor-ci.conf.js --webdriver-update=false
           ####
           npm run ng deploy --base-href=/website/ --name="github-actions" --email="action@github.com"
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          # Upload entire repository
+          path: '.'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@main
