@@ -1,6 +1,6 @@
 import { ImageFetcherService, ImageSync } from 'src/app/image-fetcher.service';
 
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 
 
@@ -9,12 +9,13 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './frc.component.html',
   styleUrls: ['./frc.component.scss']
 })
-export class FrcComponent implements OnInit {
+export class FrcComponent /*implements OnInit*/ {
   public frcImages: ImageSync[] = [];
 
-  constructor(public imageFetcher: ImageFetcherService) { }
-
-  ngOnInit() {
+  constructor(public imageFetcher: ImageFetcherService) {
     this.frcImages = this.imageFetcher.getImagesSync('frc');
   }
+
+  /*ngOnInit() {
+  }*/
 }
