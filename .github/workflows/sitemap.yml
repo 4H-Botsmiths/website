@@ -31,7 +31,7 @@ jobs:
           npm run generate-sitemap
           git config --local user.email "action@github.com"
           git config --local user.name "github-actions"
-          git add --all
+          git add src/assets/sitemap.xml
 
       - name: Push changes
         uses: ad-m/github-push-action@master
