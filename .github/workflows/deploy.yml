@@ -58,7 +58,7 @@ jobs:
           path: '.'
 
   deploy:
-    needs: [build, upload]
+    needs: upload
     environment:
       name: gh-pages
       url: ${{ steps.deployment.outputs.page_url }}
