@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 
 const posts = require('../src/app/news/news.json');
-const routes = ['home', 'news', 'sponsors', 'contact-us', 'programs/minecraft', 'programs/fll/explore', 'programs/fll/challenge', 'programs/ftc', 'programs/frc'];
+const routes = ['', 'news', 'sponsors', 'contact-us', 'programs/minecraft', 'programs/fll/explore', 'programs/fll/challenge', 'programs/ftc', 'programs/frc'];
 
 const sitemap = [...routes, ...posts.map(post => `news/${post.title.split(' ').join('-')}`)];
 
