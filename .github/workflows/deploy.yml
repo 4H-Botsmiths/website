@@ -9,13 +9,18 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Use Node.js 18.x
         uses: actions/setup-node@v1
@@ -36,6 +41,11 @@ jobs:
           # npm run e2e -- --protractor-config=e2e/protractor-ci.conf.js --webdriver-update=false
           ####
           npm run ng deploy --base-href=/website/ --name="github-actions" --email="action@github.com"
+
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: 'gh-pages'
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
