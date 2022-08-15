@@ -16,10 +16,6 @@ export class ImageCarouselComponent implements OnInit {
 
   /** The Images To Display*/
   @Input() images!: ImageSync[];
-  /** What Interval To Rotate The Images At  In Milliseconds
-   * @default 1500ms
-  */
-  @Input() interval?: number;
 
   public carouselName = 'imageCarousel' + Math.round(Math.random() * 10);
 
@@ -43,7 +39,7 @@ export class ImageCarouselComponent implements OnInit {
       console.log('rotating');
       document.getElementById('nextButton')?.click();
       //$("#nextButton").trigger('click');
-    }, this.interval ?? 1500);
+    }, 1500);
     this.router.events.subscribe((event: any) => {
       if (event instanceof NavigationStart) {
         clearInterval(interval);
