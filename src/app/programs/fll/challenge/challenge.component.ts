@@ -1,4 +1,4 @@
-import { Image, ImageFetcherService } from 'src/app/image-fetcher.service';
+import { ImageFetcherService, ImageSync } from 'src/app/image-fetcher.service';
 
 import { Component, OnInit } from '@angular/core';
 
@@ -10,13 +10,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./challenge.component.scss']
 })
 export class ChallengeComponent implements OnInit {
-  public fllChallengeImage?: Image;
-  public fllChallengeImages: Image[] = [];
+  public fllChallengeImage?: ImageSync;
+  public fllChallengeImages: ImageSync[] = [];
 
   constructor(public imageFetcher: ImageFetcherService) { }
 
   ngOnInit() {
-    this.imageFetcher.getImages('fll/challenge').then(images => this.fllChallengeImages = images);
-    this.imageFetcher.getImages('all').then(images => this.fllChallengeImage = images.find(image => image.title === 'fll challenge team'));
+    this.fllChallengeImages = this.imageFetcher.getImagesSync('fll/challenge');
+    this.fllChallengeImage = this.imageFetcher.getImagesSync('all').find(image => image.title === 'fll challenge team');
   }
 }

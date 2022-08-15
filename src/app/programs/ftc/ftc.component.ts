@@ -1,4 +1,4 @@
-import { Image, ImageFetcherService } from 'src/app/image-fetcher.service';
+import { ImageFetcherService, ImageSync } from 'src/app/image-fetcher.service';
 
 import { Component, OnInit } from '@angular/core';
 
@@ -10,11 +10,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ftc.component.scss']
 })
 export class FtcComponent implements OnInit {
-  public ftcImages: Image[] = [];
+  public ftcImages: ImageSync[] = [];
 
   constructor(public imageFetcher: ImageFetcherService) { }
 
   ngOnInit() {
-    this.imageFetcher.getImages('ftc').then(images => this.ftcImages = images);
+    this.ftcImages = this.imageFetcher.getImagesSync('ftc');
   }
 }

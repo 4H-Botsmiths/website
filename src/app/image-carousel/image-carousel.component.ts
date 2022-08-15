@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { NavigationStart, Router } from '@angular/router';
 
 import { ColorSchemeService } from '../color-scheme.service';
-import { Image } from '../image-fetcher.service';
+import { ImageSync } from '../image-fetcher.service';
 
 
 
@@ -15,13 +15,13 @@ import { Image } from '../image-fetcher.service';
 export class ImageCarouselComponent implements OnInit {
 
   /** The Images To Display*/
-  @Input() images!: Image[];
+  @Input() images!: ImageSync[];
   /** What Interval To Rotate The Images At  In Milliseconds
    * @default 1500ms
   */
   @Input() interval?: number;
 
-  public carouselName = 'imageCarousel' + Math.round(Math.random() * 10)
+  public carouselName = 'imageCarousel' + Math.round(Math.random() * 10);
 
   constructor(public colorScheme: ColorSchemeService, private router: Router) {
   }

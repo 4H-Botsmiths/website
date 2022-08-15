@@ -1,4 +1,4 @@
-import { Image, ImageFetcherService } from 'src/app/image-fetcher.service';
+import { ImageFetcherService, ImageSync } from 'src/app/image-fetcher.service';
 
 import { Component, OnInit } from '@angular/core';
 
@@ -10,11 +10,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./frc.component.scss']
 })
 export class FrcComponent implements OnInit {
-  public frcImages: Image[] = [];
+  public frcImages: ImageSync[] = [];
 
   constructor(public imageFetcher: ImageFetcherService) { }
 
   ngOnInit() {
-    this.imageFetcher.getImages('frc').then(images => this.frcImages = images);
+    this.frcImages = this.imageFetcher.getImagesSync('frc');
   }
 }

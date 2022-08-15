@@ -16,7 +16,7 @@ export class ImageGalleryComponent {
 
   constructor() { }
 
-  getImages(): Image[] {
+  getImagesSync(): Image[] {
     return this.images.sort((a, b) => a.width - b.width);
   }
 }
