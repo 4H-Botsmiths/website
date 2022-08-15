@@ -25,6 +25,11 @@
     "name": "Robot Arm"
   },
   {
+    "type": "file",
+    "path": "og-image.jpg",
+    "name": "og image"
+  },
+  {
     "type": "directory",
     "path": "sponsors"
   },
