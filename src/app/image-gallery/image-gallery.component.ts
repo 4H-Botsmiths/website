@@ -14,7 +14,11 @@ export class ImageGalleryComponent {
   /** What photos to load */
   @Input() images!: Image[];
 
-  constructor() { }
+  constructor() {
+    if (!this.images) {
+      this.images = [];
+    }
+  }
 
   getImagesSync(): Image[] {
     return this.images.sort((a, b) => a.width - b.width);
