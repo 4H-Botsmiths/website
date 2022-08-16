@@ -1,3 +1,6 @@
+<div style="display: none">
+  <a *ngFor="let article of selectedNews" href="{{article.title.split(' ').join('-')}}"></a>
+</div>
 <div class="mx-4">
   <div class="position-relative">
     <div class="btn-group position-absolute top-0 end-0">
