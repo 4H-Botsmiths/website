@@ -25,7 +25,8 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/robots.txt",
-              "src/assets"
+              "src/assets",
+              "src/app/news/news.json"
             ],
             "styles": [
               "src/styles.scss",
