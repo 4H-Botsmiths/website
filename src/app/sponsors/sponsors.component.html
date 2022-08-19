@@ -47,7 +47,7 @@
         </div>
         <!--<h4 class="text-center">Take a look at the sponsorships options below and contact us at <a href="mailto:snoco4htech@gmail.com"
             [class.link-info]="colorScheme.darkMode">snoco4htech@gmail.com</a> to become a sponsor</h4>-->
-        <div class="container py-2" [style.display]="link.endsWith('options') ? 'block' : 'none'">
+        <div class="container py-2" [style.display]="routerLinkActive('/sponsors/options') ? 'block' : 'none'">
           <h5>Take a look at the options below and click the button above to get in touch with us</h5>
           <div class="accordion" id="SponsorOptions">
             <div class="accordion-item" *ngFor="let option of sponsorOptions; index as i">
@@ -70,7 +70,7 @@
             </div>
           </div>
         </div>
-        <div class="container color-scheme-tertiary py-3" [style.display]="link.endsWith('contact-us') ? 'block' : 'none'">
+        <div class="container color-scheme-tertiary py-3" [style.display]="routerLinkActive('/sponsors/contact-us') ? 'block' : 'none'">
           <h3 class="text-center">Fill out the form below or contact us directly at <br>
             <a href="mailto:snoco4htech@gmail.com" [class.link-info]="colorScheme.darkMode">snoco4htech@gmail.com</a>
           </h3>
