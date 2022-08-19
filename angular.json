@@ -26,7 +26,16 @@
             "assets": [
               "src/robots.txt",
               "src/assets",
-              "src/app/news/news.json"
+              {
+                "input": "src/app/news",
+                "output": "news",
+                "glob": "news.json"
+              },
+              {
+                "input": "src/app/sponsors",
+                "output": "sponsors",
+                "glob": "sponsors.json"
+              }
             ],
             "styles": [
               "src/styles.scss",

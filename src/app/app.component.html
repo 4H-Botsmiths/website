@@ -1,3 +1,4 @@
+<!--Navbar to display tabs at the top of the page-->
 <header class="navbar navbar-expand-lg sticky-top color-scheme-secondary" [class.navbar-dark]="colorScheme.darkMode"
   [class.navbar-light]="colorScheme.lightMode">
   <div class="container-fluid">
@@ -25,10 +26,11 @@
             aria-currentWhenActive="page" routerLink="/news" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">News</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="dropdown-toggle nav-link" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" data-bs-auto-close="false"
-            aria-expanded="false" [attr.aria-current]="routerLinkActive('/programs') ? 'page' : null"
+          <a #programsDropdown class="dropdown-toggle nav-link" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+            data-bs-auto-close="false" aria-expanded="false" [attr.aria-current]="routerLinkActive('/programs') ? 'page' : null"
             [class.active]="routerLinkActive('/programs')" [class.text-warning]="routerLinkActive('/programs') && colorScheme.darkMode"
             [class.text-danger]="routerLinkActive('/programs') && colorScheme.lightMode"> Programs </a>
+          <!--Programs dropdown-->
           <ul class="dropdown-menu  ms-lg-0 color-scheme-tertiary" aria-labelledby="navbarDropdownMenuLink"
             [class.dropdown-menu-dark]="colorScheme.darkMode">
             <li><a class="!dropdown-item nav-link dropdownItem text-start"
@@ -38,11 +40,12 @@
                 [routerLinkActive]="['active', colorScheme.darkMode ? 'text-warning' : 'text-danger']" aria-currentWhenActive="page"
                 routerLink="/programs/ftc" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">FTC</a></li>
             <li class="nav-item dropend">
-              <a class="dropdown-toggle nav-link text-start" id="navbarDropdownMenuFLLLink" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false" [attr.aria-current]="routerLinkActive('/programs/fll') ? 'page' : null"
+              <a #fllDropdown class="dropdown-toggle nav-link text-start" id="navbarDropdownMenuFLLLink" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false" [attr.aria-current]="routerLinkActive('/programs/fll') ? 'page' : null"
                 [class.active]="routerLinkActive('/programs/fll')"
                 [class.text-warning]="routerLinkActive('/programs/fll') && colorScheme.darkMode"
                 [class.text-danger]="routerLinkActive('/programs/fll') && colorScheme.lightMode" data-bs-auto-close="false"> FLL </a>
+              <!--FLL programs dropdown-->
               <ul class="dropdown-menu ms-3 ms-lg-0 color-scheme-quaternary" aria-labelledby="navbarDropdownMenuFLLLink"
                 [class.dropdown-menu-dark]="colorScheme.darkMode">
                 <li><a class="!dropdown-item nav-link dropdownItem"
@@ -61,6 +64,7 @@
           </ul>
         </li>
       </ul>
+      <!--Second navbar to align items to the right side of the page-->
       <ul class="navbar-nav mb-2 mb-lg-0">
         <li>
           <a class="nav-link" [routerLinkActive]="['active', colorScheme.darkMode ? 'text-warning' : 'text-danger']"
@@ -71,20 +75,13 @@
     </div>
   </div>
 </header>
-<!--<div class="progress" [class.opacity-0]="!loading" [class.opacity-100]="loading">
-  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-label="Danger example"
-    [style.width]="progress+ '%'" [attr.aria-valuenow]="progress" aria-valuemin="0" aria-valuemax="100"
-    [class.bg-warning]="colorScheme.lightMode" [class.bg-danger]="colorScheme.darkMode"></div>
-</div>-->
 <br>
-<!--<div class="spinner-grow text-warning" role="status" *ngIf="loading"
-  style="width: 50vw; height: 50vh; position: absolute; right:50%; top:50%;">
-  <span class="visually-hidden">Loading...</span>
-</div>-->
+<!--Put in minimum height div to put footer at bottom of page-->
 <div class="min-vh-100">
   <router-outlet></router-outlet>
 </div>
 <br>
+<!--Footer with link to source code-->
 <footer class="bd-footer color-scheme-secondary">
   <br>
   <div class="container  text-center" style="min-height: 5vh;"> This Site Was Created and Is Maintained By <a

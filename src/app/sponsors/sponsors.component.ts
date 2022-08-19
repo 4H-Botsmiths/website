@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { NavigationEnd, NavigationStart, Router } from '@angular/router';
 
 import { ColorSchemeService } from '../color-scheme.service';
@@ -25,9 +25,11 @@ export class SponsorsComponent implements OnInit {
     amount: 0,
     additionalInfo: ''
   };
-  public link = '/sponsors';
   constructor(public colorScheme: ColorSchemeService, public imageFetcher: ImageFetcherService, public router: Router) { }
 
+  /**
+   * Open sponsor options Modal if necessary and add listeners
+   */
   ngOnInit(): void {
     const interval = setInterval(() => {
       this.form.valid = this.form.companyName !== '' && this.form.amount >= 100 && (this.form.companyLogo ? this.isValidUrl(this.form.companyLogo) : true);
@@ -39,27 +41,40 @@ export class SponsorsComponent implements OnInit {
       }
       if (event instanceof NavigationEnd) {
         // Hide progress spinner or progress bar
-        if (event.url.endsWith('options') || event.url.endsWith('contact-us')) {
-          this.link = event.url;
+        if (this.routerLinkActive('/sponsors/options') || this.routerLinkActive('/sponsors/contact-us')) {
           this.openModal();
         }
       }
     });
-    if (this.router.url.endsWith('options') || this.router.url.endsWith('contact-us')) {
-      this.link = this.router.url;
+    if (this.routerLinkActive('/sponsors/options') || this.routerLinkActive('/sponsors/contact-us')) {
       this.openModal();
     }
   }
+  /**
+ * Returns wether or not a link is active
+ * @param {string} link the link to test
+ * @returns wether or not the {@link link} is active
+ */
   routerLinkActive(link: string): boolean {
     return this.router.isActive(link, { paths: 'subset', queryParams: 'subset', fragment: 'ignored', matrixParams: 'ignored' });
   }
-  isValidUrl(url: string): boolean {
-    return /^(?:(?:https?|ftp):\/\/)(?:\S+(?::\S*)?@)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,}))\.?)(?::\d{2,5})?(?:[/?#]\S*)?$/i.test(url);
+  /**
+* Returns wether or not a link is valid
+* @param {string} link the link to test
+* @returns wether or not the {@link link} is valid
+*/
+  isValidUrl(link: string): boolean {
+    return /^(?:(?:https?|ftp):\/\/)(?:\S+(?::\S*)?@)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,}))\.?)(?::\d{2,5})?(?:[/?#]\S*)?$/i.test(link);
   }
 
+  @ViewChild("sponsorModal") sponsorModal!: ElementRef;
+  @ViewChild("sponsorModalButton") sponsorModalButton!: ElementRef;
+  /**
+   * Open the sponsorship options modal
+   */
   openModal() {
-    if (!document.getElementById('sponsorModal')!!.classList.contains('show')) {
-      document.getElementById('displaySponsorOptions')?.click();
+    if (!this.sponsorModal.nativeElement?.classList.contains('show')) {
+      this.sponsorModalButton.nativeElement?.click();
     }
   }
 }

@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { NavigationStart, Router } from '@angular/router';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { ColorSchemeService } from '../color-scheme.service';
 
@@ -10,8 +10,7 @@ import { ColorSchemeService } from '../color-scheme.service';
   templateUrl: './contact-us.component.html',
   styleUrls: ['./contact-us.component.scss']
 })
-export class ContactUsComponent implements OnInit {
-
+export class ContactUsComponent implements OnInit, OnDestroy {
   public form = {
     valid: false,
     name: '',
@@ -26,22 +25,23 @@ export class ContactUsComponent implements OnInit {
       minecraft: false
     },
     additionalInfo: '',
-  }
+  };
+  public interval?: NodeJS.Timeout;
 
   constructor(public colorScheme: ColorSchemeService, private router: Router) { }
 
+
+  /**
+   * start form validation
+   */
   ngOnInit(): void {
-    const interval = setInterval(() => {
-      this.form.programs.valid = this.form.programs.frc || this.form.programs.ftc || this.form.programs.fll.challenge || this.form.programs.fll.explore || this.form.programs.minecraft
+    this.interval = setInterval(() => {
+      this.form.programs.valid = this.form.programs.frc || this.form.programs.ftc || this.form.programs.fll.challenge || this.form.programs.fll.explore || this.form.programs.minecraft;
       this.form.valid = this.form.programs.valid && this.form.name !== '';
     });
-    this.router.events.subscribe((event: any) => {
-      if (event instanceof NavigationStart) {
-        clearInterval(interval);
-        // Show progress spinner or progress bar
-      }
-    });
   }
-
+  ngOnDestroy(): void {
+    clearInterval(this.interval);
+  }
 
 }

@@ -6,7 +6,9 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ColorSchemeService {
+  /** Wether or not the browser is using dark mode */
   public darkMode;
+  /** Wether or not the browser is using light mode */
   public lightMode;
 
   constructor() {
@@ -16,9 +18,13 @@ export class ColorSchemeService {
       location.reload();
       this.darkMode = this.getDarkMode();
       this.lightMode = this.getLightMode();
-    }
+    };
   }
 
+  /**
+   * Returns wether or not the prefers-color-scheme media equals dark
+   * @returns if prefers-color-scheme: dark is true
+   */
   public getDarkMode() {
     // Detect if prefers-color-scheme is supported
     if (window.matchMedia('(prefers-color-scheme)').media !== 'not all') {
@@ -29,6 +35,10 @@ export class ColorSchemeService {
       return true;
     }
   }
+  /**
+   * Returns wether or not the prefers-color-scheme media equals light
+   * @returns if prefers-color-scheme: light is true
+   */
   public getLightMode() {
     // Detect if prefers-color-scheme is supported
     if (window.matchMedia('(prefers-color-scheme)').media !== 'not all') {

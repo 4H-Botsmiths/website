@@ -2,8 +2,9 @@
   <h4>Thank you for your generous donation to our cause, we couldn't do it without you.</h4>
   <h5>Want to get your organization out their while also supporting our teams?</h5>
   <a class="h5" [class.link-info]="colorScheme.darkMode" routerLink="./options">Become a sponsor</a>
-  <a data-bs-toggle="modal" data-bs-target="#sponsorModal" id="displaySponsorOptions"></a>
+  <a #sponsorModalButton data-bs-toggle="modal" data-bs-target="#sponsorModal" id="displaySponsorOptions"></a>
 </div>
+<!--Mail instructions pop-up-->
 <div class="modal fade" id="contactUsPopup" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
   aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
@@ -25,7 +26,7 @@
   </div>
 </div>
 <!-- Modal -->
-<div class="modal fade" id="sponsorModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+<div #sponsorModal class="modal fade" id="sponsorModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
   aria-labelledby="sponsorModalLabel" aria-hidden="true">
   <!--modal-dialog-centered-->
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">

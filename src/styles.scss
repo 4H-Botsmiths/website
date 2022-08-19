@@ -1,33 +1,34 @@
 /* You can add global styles to this file, and also import other style files */
 
-@media (prefers-color-scheme: dark) {
-  .color-scheme-main {
-    background-color: hsla(0, 0%, 0%) !important;
-    color: hsl(0, 0%, 85%) !important;
-  }
-
-  .color-scheme-secondary {
-    background-color: hsla(0, 0%, 20%) !important;
-    color: hsl(0, 0%, 85%) !important;
-  }
-
-  .color-scheme-tertiary {
-    background-color: hsla(0, 0%, 30%) !important;
-    color: hsl(0, 0%, 85%) !important;
-  }
-
-  .color-scheme-quaternary {
-    background-color: hsla(0, 0%, 35%) !important;
-    color: hsl(0, 0%, 85%) !important;
-  }
-
-  img {
-    opacity: 0.75
-  }
+/**Colors for devices in dark mode*/
+//@media (prefers-color-scheme: dark) {
+.color-scheme-main {
+  background-color: hsla(0, 0%, 0%) !important;
+  color: hsl(0, 0%, 85%) !important;
 }
 
-//[style.opacity]="colorScheme.darkMode ? 0.5 : 0.75"
+.color-scheme-secondary {
+  background-color: hsla(0, 0%, 20%) !important;
+  color: hsl(0, 0%, 85%) !important;
+}
 
+.color-scheme-tertiary {
+  background-color: hsla(0, 0%, 30%) !important;
+  color: hsl(0, 0%, 85%) !important;
+}
+
+.color-scheme-quaternary {
+  background-color: hsla(0, 0%, 35%) !important;
+  color: hsl(0, 0%, 85%) !important;
+}
+
+img {
+  opacity: 0.75
+}
+
+//}
+
+/**Colors for devices in light mode*/
 @media (prefers-color-scheme: light) {
   .color-scheme-main {
     color: hsla(0, 0%, 15%) !important;

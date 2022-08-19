@@ -1,5 +1,3 @@
-
-
 import { Injectable } from '@angular/core';
 
 import fllChallengeMap from '../assets/images/fll/challenge/map.json';
@@ -17,6 +15,9 @@ import sponsorsMap from '../assets/images/sponsors/map.json';
   providedIn: 'root'
 })
 export class ImageFetcherService {
+  /**
+   * A list of maps in the images directory
+   */
   private readonly maps = {
     all: imagesMap,
     sponsors: sponsorsMap,
@@ -28,7 +29,7 @@ export class ImageFetcherService {
     'fll/challenge': fllChallengeMap
   };
   /**
-   *
+   * @async
    * @param directory where to search for the images
    * @returns /directory/file array
    */
@@ -38,6 +39,11 @@ export class ImageFetcherService {
     console.log('Images Fetched', images);
     return images;
   }
+  /**
+   * @async
+   * @param directory the directory to pursue
+   * @returns /directory/file array
+   */
   private async pursueImages(directory: string, options: Options): Promise<Image[]> {
     const images: Image[] = [];
     const map: File[] = this.maps[directory as 'all'] as File[];
@@ -78,6 +84,11 @@ export class ImageFetcherService {
     console.log('Images Fetched', images);
     return images;
   }
+  /**
+  *
+  * @param directory the directory to pursue
+  * @returns /directory/file array
+  */
   private pursueImagesSync(directory: string, options: Options): ImageSync[] {
     const images: ImageSync[] = [];
     const map: File[] = this.maps[directory as 'all'] as File[];
@@ -95,6 +106,11 @@ export class ImageFetcherService {
     return images;
   }
 
+  /**
+   * A makeshift function to replicate the {@link path.join()} function
+   * @param paths the paths to join
+   * @returns the joined path
+   */
   join(...paths: (string | undefined)[]): string {
     let joinedPath = '';
     paths.forEach(path => {

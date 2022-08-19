@@ -1,6 +1,6 @@
 import { filter, map, mergeMap } from 'rxjs';
 
-import { Component } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, NavigationError, NavigationStart, Router } from '@angular/router';
 
 import { ColorSchemeService } from './color-scheme.service';
@@ -13,11 +13,12 @@ import { MetaService } from './meta.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  currentRoute!: string;
-  loading: boolean = false;
-  progress = 0;
-  constructor(public colorScheme: ColorSchemeService, public router: Router, private metaService: MetaService, private activatedRoute: ActivatedRoute) {
+export class AppComponent implements OnInit {
+  constructor(public colorScheme: ColorSchemeService, public router: Router, private metaService: MetaService, private activatedRoute: ActivatedRoute) { }
+  /**
+   * Update meta's and add route change listeners
+   */
+  ngOnInit(): void {
     this.router.events
       .pipe(
         filter((event) => event instanceof NavigationEnd),
@@ -29,55 +30,40 @@ export class AppComponent {
         filter((route) => route.outlet === 'primary'),
         mergeMap((route) => route.data)).subscribe((data) => {
           console.log(data);
-          metaService.updateTitle(data['title'] ?? '');
-          metaService.updateDescription(data['description'] ?? '');
-          metaService.updateKeywords(data['keywords'] ?? []);
-          /*this.metaService.updateMetaTags({
-            description: data['description'],
-            keywords: data['keywords'],
-          })*/
-          //this.titleService.setTitle(event['title'] + ' | Site name');
+          this.metaService.updateTitle(data['title'] ?? '');
+          this.metaService.updateDescription(data['description'] ?? '');
+          this.metaService.updateKeywords(data['keywords'] ?? []);
         });
-    this.progress = 0;
     this.router.events.subscribe((event: any) => {
       if (event instanceof NavigationStart) {
         this.closeDropdown();
-        this.loading = true;
-        this.progress = 100;
-        // Show progress spinner or progress bar
-        //document.getElementById('loadingBar')!.style.display = 'block';
         console.log('Route change detected');
       }
-
       if (event instanceof NavigationEnd) {
-        // Hide progress spinner or progress bar
-        //document.getElementById('loadingBar')!.style.display = 'none';
-        setTimeout(() => { this.loading = false; this.progress = 0; }, 500);
-        this.currentRoute = event.url;
-        console.log(event);
+        console.debug(event);
       }
-
       if (event instanceof NavigationError) {
-        // Hide progress spinner or progress bar
-        //document.getElementById('loadingBar')!.style.display = 'none';
-        //setTimeout(() => this.loading = false, 500);
-        this.loading = false; this.progress = 0;
-        // Present error to user
-        console.log(event.error);
+        console.error(event.error);
       }
     });
-
   }
-  title = '4-H Botsmiths';
+  /**
+   * Returns wether or not a link is active
+   * @param {string} link the link to test
+   * @returns wether or not the {@link link} is active
+   */
   routerLinkActive(link: string): boolean {
     return this.router.isActive(link, { paths: 'subset', queryParams: 'subset', fragment: 'ignored', matrixParams: 'ignored' });
   }
+  @ViewChild("fllDropdown") fllDropdown!: ElementRef;
+  @ViewChild("programsDropdown") programsDropdown!: ElementRef;
+  /**
+   * Close the navbar dropdowns if necessary
+   */
   closeDropdown() {
-    const nestedDropdown = document.getElementById('navbarDropdownMenuFLLLink');
+    const nestedDropdown = this.fllDropdown.nativeElement;
     nestedDropdown?.classList.contains('show') ? nestedDropdown?.click() : undefined;
-    const dropdown = document.getElementById('navbarDropdownMenuLink');
+    const dropdown = this.programsDropdown.nativeElement;
     dropdown?.classList.contains('show') ? dropdown?.click() : undefined;
   }
-
-  public map = ``;
 }
