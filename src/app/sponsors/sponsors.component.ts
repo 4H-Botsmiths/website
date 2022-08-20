@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { NavigationEnd, NavigationStart, Router } from '@angular/router';
 
 import { ColorSchemeService } from '../color-scheme.service';
@@ -13,7 +13,7 @@ import sponsors from './sponsors.json';
   templateUrl: './sponsors.component.html',
   styleUrls: ['./sponsors.component.scss']
 })
-export class SponsorsComponent implements OnInit {
+export class SponsorsComponent implements OnInit, AfterViewInit {
   public sponsors: Sponsor[] = sponsors;
   public sponsorOptions: Option[] = sponsorOptions;
 
@@ -46,6 +46,8 @@ export class SponsorsComponent implements OnInit {
         }
       }
     });
+  }
+  ngAfterViewInit(): void {
     if (this.routerLinkActive('/sponsors/options') || this.routerLinkActive('/sponsors/contact-us')) {
       this.openModal();
     }

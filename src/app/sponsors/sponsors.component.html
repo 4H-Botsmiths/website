@@ -2,6 +2,7 @@
   <h4>Thank you for your generous donation to our cause, we couldn't do it without you.</h4>
   <h5>Want to get your organization out their while also supporting our teams?</h5>
   <a class="h5" [class.link-info]="colorScheme.darkMode" routerLink="./options">Become a sponsor</a>
+  <!--Button to actually toggle pop-up-->
   <a #sponsorModalButton data-bs-toggle="modal" data-bs-target="#sponsorModal" id="displaySponsorOptions"></a>
 </div>
 <!--Mail instructions pop-up-->
@@ -25,10 +26,10 @@
     </div>
   </div>
 </div>
-<!-- Modal -->
+<!--Sponsorship Modal-->
 <div #sponsorModal class="modal fade" id="sponsorModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
   aria-labelledby="sponsorModalLabel" aria-hidden="true">
-  <!--modal-dialog-centered-->
+  <!--Sponsorship options anf contact-us form-->
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
     <div class="modal-content color-scheme-secondary">
       <div class="modal-header color-scheme-tertiary">
@@ -37,7 +38,8 @@
           routerLink="/sponsors"></button>
       </div>
       <div class="modal-body color-scheme-quaternary">
-        <div class="btn-group btn-group-sm w-100" role="group" aria-label="Basic example">
+        <!--Sponsorship Tabs-->
+        <div class="btn-group btn-group-sm w-100" role="group" aria-label="Sponsorship Tabs">
           <button type="button" class="btn" [class.btn-outline-warning]="colorScheme.darkMode"
             [class.btn-outline-danger]="colorScheme.lightMode" routerLinkActive="active" aria-currentWhenActive="step"
             routerLink="/sponsors/options">Options</button>
@@ -45,8 +47,7 @@
             [class.btn-outline-danger]="colorScheme.lightMode" routerLinkActive="active" aria-currentWhenActive="step"
             routerLink="/sponsors/contact-us">Contact Us</button>
         </div>
-        <!--<h4 class="text-center">Take a look at the sponsorships options below and contact us at <a href="mailto:snoco4htech@gmail.com"
-            [class.link-info]="colorScheme.darkMode">snoco4htech@gmail.com</a> to become a sponsor</h4>-->
+        <!--Sponsorship Options-->
         <div class="container py-2" [style.display]="routerLinkActive('/sponsors/options') ? 'block' : 'none'">
           <h5>Take a look at the options below and click the button above to get in touch with us</h5>
           <div class="accordion" id="SponsorOptions">
@@ -70,6 +71,7 @@
             </div>
           </div>
         </div>
+        <!--Sponsorship Contact-Us Form-->
         <div class="container color-scheme-tertiary py-3" [style.display]="routerLinkActive('/sponsors/contact-us') ? 'block' : 'none'">
           <h3 class="text-center">Fill out the form below or contact us directly at <br>
             <a href="mailto:snoco4htech@gmail.com" [class.link-info]="colorScheme.darkMode">snoco4htech@gmail.com</a>
@@ -114,6 +116,7 @@
   </div>
 </div>
 <br>
+<!--Sponsors-->
 <div class="container accordion" id="Sponsors">
   <div class="accordion-item" *ngFor="let sponsor of sponsors; index as i">
     <h2 class="accordion-header" id="Heading{{i+1}}">

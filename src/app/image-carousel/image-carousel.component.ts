@@ -1,5 +1,4 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
 import { ColorSchemeService } from '../color-scheme.service';
 import { ImageSync } from '../image-fetcher.service';
@@ -21,16 +20,20 @@ export class ImageCarouselComponent implements OnInit, OnDestroy {
 
   public carouselName = 'imageCarousel' + Math.round(Math.random() * 10);
 
-  constructor(public colorScheme: ColorSchemeService, private router: Router) {
+  constructor(public colorScheme: ColorSchemeService) {
   }
-
-
+  /**
+   * Start carousel rotation
+   */
   ngOnInit(): void {
     this.interval = setInterval(() => {
       console.log('rotating');
       document.getElementById('nextButton')?.click();
     }, 1500);
   }
+  /**
+   * Stop carousel rotation
+   */
   ngOnDestroy(): void {
     clearInterval(this.interval);
   }
