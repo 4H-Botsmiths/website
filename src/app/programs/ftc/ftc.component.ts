@@ -13,7 +13,9 @@ export class FtcComponent implements OnInit {
   public ftcImages: ImageSync[] = [];
 
   constructor(public imageFetcher: ImageFetcherService) { }
-
+  /**
+   * Fetch images
+   */
   ngOnInit() {
     this.ftcImages = this.imageFetcher.getImagesSync('ftc');
   }

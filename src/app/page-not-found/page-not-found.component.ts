@@ -14,9 +14,15 @@ export class PageNotFoundComponent implements OnInit, OnDestroy {
 
   constructor(public colorScheme: ColorSchemeService, private meta: Meta) { }
 
+  /**
+   * mark page as none indexable
+   */
   ngOnInit(): void {
     this.meta.addTag({ name: 'robots', content: 'NOINDEX' });
   }
+  /**
+   * remove non-indexable tag
+   */
   ngOnDestroy(): void {
     this.meta.removeTag('name="robots"');
   }

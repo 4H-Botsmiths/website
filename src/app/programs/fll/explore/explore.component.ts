@@ -14,7 +14,9 @@ export class ExploreComponent implements OnInit {
   public fllExploreImages: ImageSync[] = [];
 
   constructor(public imageFetcher: ImageFetcherService) { }
-
+  /**
+   * Fetch images
+   */
   ngOnInit() {
     this.fllExploreImages = this.imageFetcher.getImagesSync('fll/explore');
     this.fllExploreImage = this.imageFetcher.getImagesSync('all').find(image => image.title === 'fll explore team');

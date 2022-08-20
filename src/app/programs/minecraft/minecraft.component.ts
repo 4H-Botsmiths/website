@@ -14,6 +14,9 @@ export class MinecraftComponent implements OnInit {
 
   constructor(public imageFetcher: ImageFetcherService) { }
 
+  /**
+   * Fetch images
+   */
   ngOnInit() {
     this.minecraftImages = this.imageFetcher.getImagesSync('minecraft');
   }

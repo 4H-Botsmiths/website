@@ -14,7 +14,9 @@ export class ChallengeComponent implements OnInit {
   public fllChallengeImages: ImageSync[] = [];
 
   constructor(public imageFetcher: ImageFetcherService) { }
-
+  /**
+   * Fetch images
+   */
   ngOnInit() {
     this.fllChallengeImages = this.imageFetcher.getImagesSync('fll/challenge');
     this.fllChallengeImage = this.imageFetcher.getImagesSync('all').find(image => image.title === 'fll challenge team');

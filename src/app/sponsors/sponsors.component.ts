@@ -28,7 +28,7 @@ export class SponsorsComponent implements OnInit, AfterViewInit {
   constructor(public colorScheme: ColorSchemeService, public imageFetcher: ImageFetcherService, public router: Router) { }
 
   /**
-   * Open sponsor options Modal if necessary and add listeners
+   * add sponsor options Modal listeners
    */
   ngOnInit(): void {
     const interval = setInterval(() => {
@@ -47,6 +47,9 @@ export class SponsorsComponent implements OnInit, AfterViewInit {
       }
     });
   }
+  /**
+   * Open sponsor options modal if needed
+   */
   ngAfterViewInit(): void {
     if (this.routerLinkActive('/sponsors/options') || this.routerLinkActive('/sponsors/contact-us')) {
       this.openModal();
