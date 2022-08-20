@@ -15,6 +15,9 @@ export class HomeComponent implements OnInit {
 
   constructor(public colorScheme: ColorSchemeService, public imageFetcher: ImageFetcherService) { }
 
+  /**
+   * Load sponsor images
+   */
   async ngOnInit() {
     this.imageFetcher.getImages('sponsors', { titles: false }).then(images => this.sponsorImages = images);
   }
