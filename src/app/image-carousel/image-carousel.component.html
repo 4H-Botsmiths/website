@@ -1,13 +1,13 @@
 <div class="container">
-  <!--Image carousel-->
+  <!-- Image carousel -->
   <div id="{{carouselName}}" class="carousel slide" [class.carousel-dark]="colorScheme.lightMode" data-bs-pause="false">
-    <!--Carousel indicators for manual carousel control-->
+    <!-- Carousel indicators for manual carousel control -->
     <div class="carousel-indicators">
       <button *ngFor="let image of images; index as i" [attr.data-bs-target]="'#'+carouselName" [attr.data-bs-slide-to]="i"
         [attr.aria-label]="'Slide '+ (i+1)" [class.active]="i === 0" [attr.aria-current]="i === 0" [title]="'Slide '+ (i+1)"></button>
     </div>
     <div class="carousel-inner d-flex align-items-center" style="height: 50vw">
-      <!--Carousel images-->
+      <!-- Carousel images -->
       <div class="carousel-item" *ngFor="let image of images; index as i" [class.active]="i === 0">
         <img alt="{{image.src}}" src="{{image.src}}" class="w-100 h-100" [class.active]="i === 0" [attr.aria-current]="i === 0">
         <div class="carousel-caption d-none d-md-block">
@@ -16,7 +16,7 @@
         </div>
       </div>
     </div>
-    <!--Carousel controls for javascript animation-->
+    <!-- Carousel controls for javascript animation -->
     <div style="display: none;">
       <button class="carousel-control-prev" type="button" [attr.data-bs-target]="'#'+carouselName" data-bs-slide="prev" id="backButton">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>

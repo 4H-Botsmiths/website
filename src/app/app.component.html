@@ -1,4 +1,4 @@
-<!--Navbar to display tabs at the top of the page-->
+<!-- Navbar to display tabs at the top of the page -->
 <header class="navbar navbar-expand-lg sticky-top color-scheme-secondary" [class.navbar-dark]="colorScheme.darkMode"
   [class.navbar-light]="colorScheme.lightMode">
   <div class="container-fluid">
@@ -30,7 +30,7 @@
             data-bs-auto-close="false" aria-expanded="false" [attr.aria-current]="routerLinkActive('/programs') ? 'page' : null"
             [class.active]="routerLinkActive('/programs')" [class.text-warning]="routerLinkActive('/programs') && colorScheme.darkMode"
             [class.text-danger]="routerLinkActive('/programs') && colorScheme.lightMode"> Programs </a>
-          <!--Programs dropdown-->
+          <!-- Programs dropdown -->
           <ul class="dropdown-menu  ms-lg-0 color-scheme-tertiary" aria-labelledby="navbarDropdownMenuLink"
             [class.dropdown-menu-dark]="colorScheme.darkMode">
             <li><a class="!dropdown-item nav-link dropdownItem text-start"
@@ -45,7 +45,7 @@
                 [class.active]="routerLinkActive('/programs/fll')"
                 [class.text-warning]="routerLinkActive('/programs/fll') && colorScheme.darkMode"
                 [class.text-danger]="routerLinkActive('/programs/fll') && colorScheme.lightMode" data-bs-auto-close="false"> FLL </a>
-              <!--FLL programs dropdown-->
+              <!-- FLL programs dropdown -->
               <ul class="dropdown-menu ms-3 ms-lg-0 color-scheme-quaternary" aria-labelledby="navbarDropdownMenuFLLLink"
                 [class.dropdown-menu-dark]="colorScheme.darkMode">
                 <li><a class="!dropdown-item nav-link dropdownItem"
@@ -64,7 +64,7 @@
           </ul>
         </li>
       </ul>
-      <!--Second navbar to align items to the right side of the page-->
+      <!-- Second navbar to align items to the right side of the page -->
       <ul class="navbar-nav mb-2 mb-lg-0">
         <li>
           <a class="nav-link" [routerLinkActive]="['active', colorScheme.darkMode ? 'text-warning' : 'text-danger']"
@@ -76,12 +76,12 @@
   </div>
 </header>
 <br>
-<!--Put in minimum height div to put footer at bottom of page-->
+<!-- Put in minimum height div to put footer at bottom of page -->
 <div class="min-vh-100">
   <router-outlet></router-outlet>
 </div>
 <br>
-<!--Footer with link to source code-->
+<!-- Footer with link to source code -->
 <footer class="bd-footer color-scheme-secondary">
   <br>
   <div class="container  text-center" style="min-height: 5vh;"> This Site Was Created and Is Maintained By <a

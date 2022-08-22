@@ -1,10 +1,11 @@
 # 4-H Botsmiths Website
+
 [![Deploy to GitHub Pages via angular-cli-ghpages](https://github.com/4H-Botsmiths/website/actions/workflows/deploy.yml/badge.svg)](https://github.com/4H-Botsmiths/website/actions/workflows/deploy.yml)
 [![pages-build-deployment](https://github.com/4H-Botsmiths/website/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/4H-Botsmiths/website/actions/workflows/pages/pages-build-deployment)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.6.
 View live deployment [here](https://4h-botsmiths.github.io/website)
-<!--## Development server
+<!-- ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
@@ -27,4 +28,4 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
--->
+ -->

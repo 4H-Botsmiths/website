@@ -1,7 +1,7 @@
 <div class="container">
-  <!--Image gallery-->
+  <!-- Image gallery -->
   <div class="row row-cols-auto justify-content-around align-items-center">
-    <!--Gallery images-->
+    <!-- Gallery images -->
     <div class="col" *ngFor="let image of getImagesSync()">
       <img alt="{{image.title || image.src}}" src="{{image.src}}" class="w-100">
       <h5 *ngIf="image.title" class="text-center">{{image.title}}</h5>

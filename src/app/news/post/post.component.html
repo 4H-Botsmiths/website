@@ -1,7 +1,7 @@
-<!--Back button-->
+<!-- Back button -->
 <button type="button" routerLink="../" class="btn ms-3" [class.btn-outline-warning]="colorScheme.darkMode"
   [class.btn-outline-danger]="colorScheme.lightMode">&larr; Back</button>
-<!--News Post-->
+<!-- News Post -->
 <div class="container py-3 d-flex justify-content-center">
   <div class="card color-scheme-tertiary" style="min-width: 50vw; max-width:75vw">
     <div *ngIf="post.header" class="card-header text-center" [innerHTML]="post.header"></div>
