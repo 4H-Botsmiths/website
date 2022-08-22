@@ -40,6 +40,9 @@ export class AppComponent implements OnInit {
         console.log('Route change detected');
       }
       if (event instanceof NavigationEnd) {
+        /** Upload Analytics */
+        (<any> window).ga('set', 'page', event.urlAfterRedirects);
+        (<any> window).ga('send', 'pageview');
         console.debug(event);
       }
       if (event instanceof NavigationError) {
