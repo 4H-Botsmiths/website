@@ -8,6 +8,8 @@ import { MetaService } from './meta.service';
 
 
 
+declare const gtag: Function;
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -41,8 +43,7 @@ export class AppComponent implements OnInit {
       }
       if (event instanceof NavigationEnd) {
         /** Upload Analytics */
-        (<any> window).ga('set', 'page', event.urlAfterRedirects);
-        (<any> window).ga('send', 'pageview');
+        gtag('config', 'MEASUREMENT-ID', { 'page_path': event.urlAfterRedirects });
         console.debug(event);
       }
       if (event instanceof NavigationError) {
