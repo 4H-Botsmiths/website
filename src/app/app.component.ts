@@ -43,7 +43,7 @@ export class AppComponent implements OnInit {
       }
       if (event instanceof NavigationEnd) {
         /** Upload Analytics */
-        gtag('config', 'MEASUREMENT-ID', { 'page_path': event.urlAfterRedirects });
+        gtag('config', 'G-SW0GW3DS0Y', { 'page_path': event.urlAfterRedirects });
         console.debug(event);
       }
       if (event instanceof NavigationError) {
