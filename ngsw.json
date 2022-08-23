@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1661279898928,
+  "timestamp": 1661280662829,
   "index": "/website/index.html",
   "assetGroups": [
     {
@@ -145,18 +145,6 @@
       "urls": [],
       "patterns": [
         "https:\\/\\/www\\.googletagmanager\\.com\\/gtag\\/js\\?id=G-SW0GW3DS0Y"
-      ]
-    },
-    {
-      "name": "map-embed",
-      "installMode": "lazy",
-      "updateMode": "lazy",
-      "cacheQueryOptions": {
-        "ignoreVary": true
-      },
-      "urls": [],
-      "patterns": [
-        "https:\\/\\/maps\\.google\\.com\\/maps\\?q=15019%20Three%20Lakes%20Rd,%20Snohomish,%20WA%2098290&t=k&z=13&ie=UTF8&iwloc=&output=embed"
       ]
     }
   ],
