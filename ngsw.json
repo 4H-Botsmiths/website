@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1661280662829,
+  "timestamp": 1661285334437,
   "index": "/website/index.html",
   "assetGroups": [
     {
@@ -17,6 +17,7 @@
         "/website/polyfills.8ae4867ec0ac6c5e.js",
         "/website/runtime.eb5339411b39c9f1.js",
         "/website/scripts.a5df712912c65b3f.js",
+        "/website/site.webmanifest",
         "/website/styles.a67caea72bcb1c6d.css"
       ],
       "patterns": []
@@ -248,6 +249,7 @@
     "/website/polyfills.8ae4867ec0ac6c5e.js": "c224b037cf710527b661c1d026c4fb8097dc20d5",
     "/website/runtime.eb5339411b39c9f1.js": "9ea50e53797fa3bfab2fb19aaf14d47aa8b69553",
     "/website/scripts.a5df712912c65b3f.js": "4e3dca74f78d4172e2f70f577e325019ba1b1898",
+    "/website/site.webmanifest": "cb0b990b74cb5aee55a37b54eb9229edeb2315ea",
     "/website/styles.a67caea72bcb1c6d.css": "71fc259200b24a1fbbb6b80195cef3f8642cd0a9"
   },
   "navigationUrls": [
