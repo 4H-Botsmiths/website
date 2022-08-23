@@ -42,7 +42,8 @@
     {
       "name": "analytics",
       "urls": [
-        "https://www.googletagmanager.com/gtag/js?id=G-SW0GW3DS0Y"
+        "https://www.googletagmanager.com/gtag/js?id=G-SW0GW3DS0Y",
+        "https://www.google-analytics.com/**"
       ],
       "cacheConfig": {
         "maxSize": 1,
