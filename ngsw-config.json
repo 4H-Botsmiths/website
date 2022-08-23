@@ -25,6 +25,16 @@
           "/*.(svg|cur|jpg|jpeg|png|apng|webp|avif|gif|otf|ttf|woff|woff2)"
         ]
       }
+    },
+    {
+      "name": "analytics",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "resources": {
+        "urls": [
+          "https://www.googletagmanager.com/gtag/js?id=G-SW0GW3DS0Y"
+        ]
+      }
     }
   ]
 }

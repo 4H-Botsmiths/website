@@ -36,7 +36,7 @@
                 "output": "sponsors",
                 "glob": "sponsors.json"
               },
-              "src/manifest.webmanifest",
+              "src/site.webmanifest",
               "src/favicon.ico"
             ],
             "styles": [
