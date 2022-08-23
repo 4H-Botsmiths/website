@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1661277940879,
+  "timestamp": 1661278753233,
   "index": "/website/index.html",
   "assetGroups": [
     {
@@ -124,6 +124,18 @@
         "/website/assets/splash_screens/icon.png"
       ],
       "patterns": []
+    },
+    {
+      "name": "analytics",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [],
+      "patterns": [
+        "https:\\/\\/www\\.googletagmanager\\.com\\/gtag\\/js\\?id=G-SW0GW3DS0Y"
+      ]
     }
   ],
   "dataGroups": [],
@@ -222,7 +234,7 @@
     "/website/assets/splash_screens/iPhone_8__iPhone_7__iPhone_6s__iPhone_6__4.7__iPhone_SE_portrait.png": "806008f067b3decbb9a9d39341e9bcdc2b761bbc",
     "/website/assets/splash_screens/icon.png": "e05a53de3e20298129ef5b70b01972a8210a5ef0",
     "/website/favicon.ico": "0b66fb1fd1372fff104df9d4e2e2007de395569e",
-    "/website/index.html": "5b6860fedb978e252866b540c074ba46e62c2046",
+    "/website/index.html": "35975d435fc1d78f10f624af4b35ab45507a34e7",
     "/website/main.6f53271c3ed517e6.js": "7a62e14d5b7ef542d5455a4f079aa0c561232be1",
     "/website/polyfills.8ae4867ec0ac6c5e.js": "c224b037cf710527b661c1d026c4fb8097dc20d5",
     "/website/runtime.eb5339411b39c9f1.js": "9ea50e53797fa3bfab2fb19aaf14d47aa8b69553",
