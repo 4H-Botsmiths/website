@@ -46,15 +46,6 @@
           "https://www.googletagmanager.com/gtag/js?id=G-SW0GW3DS0Y"
         ]
       }
-    },
-    {
-      "name": "map-embed",
-      "installMode": "lazy",
-      "resources": {
-        "urls": [
-          "https://maps.google.com/maps?q=15019%20Three%20Lakes%20Rd,%20Snohomish,%20WA%2098290&t=k&z=13&ie=UTF8&iwloc=&output=embed"
-        ]
-      }
     }
   ]
 }
