@@ -36,15 +36,17 @@
           "/assets/splash_screens/**"
         ]
       }
-    },
+    }
+  ],
+  "dataGroups": [
     {
       "name": "analytics",
-      "installMode": "prefetch",
-      "updateMode": "prefetch",
-      "resources": {
-        "urls": [
-          "https://www.googletagmanager.com/gtag/js?id=G-SW0GW3DS0Y"
-        ]
+      "urls": [
+        "https://www.googletagmanager.com/gtag/js?id=G-SW0GW3DS0Y"
+      ],
+      "cacheConfig": {
+        "maxSize": 1,
+        "maxAge": "360d"
       }
     }
   ]
