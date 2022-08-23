@@ -35,7 +35,9 @@
                 "input": "src/app/sponsors",
                 "output": "sponsors",
                 "glob": "sponsors.json"
-              }
+              },
+              "src/manifest.webmanifest",
+              "src/favicon.ico"
             ],
             "styles": [
               "src/styles.scss",
@@ -43,7 +45,9 @@
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
-            ]
+            ],
+            "serviceWorker": true,
+            "ngswConfigPath": "ngsw-config.json"
           },
           "configurations": {
             "production": {
@@ -113,7 +117,8 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/robots.txt",
-              "src/assets"
+              "src/assets",
+              "src/manifest.webmanifest"
             ],
             "styles": [
               "src/styles.scss",

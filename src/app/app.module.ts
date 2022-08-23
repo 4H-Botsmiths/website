@@ -18,6 +18,8 @@ import { FrcComponent } from './programs/frc/frc.component';
 import { FtcComponent } from './programs/ftc/ftc.component';
 import { MinecraftComponent } from './programs/minecraft/minecraft.component';
 import { SponsorsComponent } from './sponsors/sponsors.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 
 
@@ -43,6 +45,12 @@ import { SponsorsComponent } from './sponsors/sponsors.component';
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    }),
   ],
   providers: [Meta],
   bootstrap: [AppComponent]

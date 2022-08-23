@@ -2,6 +2,8 @@
   "$schema": "https://json.schemastore.org/web-manifest-combined.json",
   "name": "4-H Botsmiths",
   "short_name": "4-H Botsmiths",
+  "scope": "./",
+  "start_url": "./",
   "icons": [
     {
       "src": "./android-chrome-192x192.png?v=3",
@@ -18,4 +20,3 @@
   "background_color": "#ffffff",
   "display": "standalone"
 }
-
