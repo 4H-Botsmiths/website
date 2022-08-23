@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1661279230098,
+  "timestamp": 1661279794012,
   "index": "/website/index.html",
   "assetGroups": [
     {
@@ -22,22 +22,13 @@
       "patterns": []
     },
     {
-      "name": "assets",
-      "installMode": "lazy",
+      "name": "images",
+      "installMode": "prefetch",
       "updateMode": "prefetch",
       "cacheQueryOptions": {
         "ignoreVary": true
       },
       "urls": [
-        "/website/assets/icons/README.md",
-        "/website/assets/icons/android-chrome-192x192.png",
-        "/website/assets/icons/android-chrome-512x512.png",
-        "/website/assets/icons/apple-touch-icon.png",
-        "/website/assets/icons/browserconfig.xml",
-        "/website/assets/icons/favicon-16x16.png",
-        "/website/assets/icons/favicon-32x32.png",
-        "/website/assets/icons/html_code.html",
-        "/website/assets/icons/mstile-150x150.png",
         "/website/assets/images/IMG_1009.jpeg",
         "/website/assets/images/fll/challenge/IMG_1091.jpeg",
         "/website/assets/images/fll/challenge/IMG_1092.jpeg",
@@ -91,8 +82,27 @@
         "/website/assets/images/sponsors/boeing.png",
         "/website/assets/images/sponsors/map.json",
         "/website/assets/images/sponsors/ni.jpg",
-        "/website/assets/images/sponsors/solidworks.png",
-        "/website/assets/sitemap.xml",
+        "/website/assets/images/sponsors/solidworks.png"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "icons",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/website/assets/icons/README.md",
+        "/website/assets/icons/android-chrome-192x192.png",
+        "/website/assets/icons/android-chrome-512x512.png",
+        "/website/assets/icons/apple-touch-icon.png",
+        "/website/assets/icons/browserconfig.xml",
+        "/website/assets/icons/favicon-16x16.png",
+        "/website/assets/icons/favicon-32x32.png",
+        "/website/assets/icons/html_code.html",
+        "/website/assets/icons/mstile-150x150.png",
         "/website/assets/splash_screens/10.2__iPad_landscape.png",
         "/website/assets/splash_screens/10.2__iPad_portrait.png",
         "/website/assets/splash_screens/10.5__iPad_Air_landscape.png",
@@ -135,6 +145,18 @@
       "urls": [],
       "patterns": [
         "https:\\/\\/www\\.googletagmanager\\.com\\/gtag\\/js\\?id=G-SW0GW3DS0Y"
+      ]
+    },
+    {
+      "name": "map-embed",
+      "installMode": "lazy",
+      "updateMode": "lazy",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [],
+      "patterns": [
+        "https:\\/\\/maps\\.google\\.com\\/maps\\?q=15019%20Three%20Lakes%20Rd,%20Snohomish,%20WA%2098290&t=k&z=13&ie=UTF8&iwloc=&output=embed"
       ]
     }
   ],
@@ -203,7 +225,6 @@
     "/website/assets/images/sponsors/map.json": "9d0a62bc5c7fa25823ed1e47328f627e9d1a3e2f",
     "/website/assets/images/sponsors/ni.jpg": "f6f778396df801ace5437590f5c6246539c83825",
     "/website/assets/images/sponsors/solidworks.png": "8d19c6e7c8af9e09ea33a954b79e3c4856f045ce",
-    "/website/assets/sitemap.xml": "7d2c98417806d9dae1e7de20a6328416e4435b29",
     "/website/assets/splash_screens/10.2__iPad_landscape.png": "f0c64240c65ee5aed4f8273d53824e97bc61810c",
     "/website/assets/splash_screens/10.2__iPad_portrait.png": "cdce70ff6498c02527d8360dfe02a18643cfbc08",
     "/website/assets/splash_screens/10.5__iPad_Air_landscape.png": "63a8bdcbdd50b5f3c4b63ed7d798073ccb5d7586",
