@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1661293020678,
+  "timestamp": 1661295508071,
   "index": "/website/index.html",
   "assetGroups": [
     {
@@ -135,21 +135,23 @@
         "/website/assets/splash_screens/icon.png"
       ],
       "patterns": []
-    },
+    }
+  ],
+  "dataGroups": [
     {
       "name": "analytics",
-      "installMode": "prefetch",
-      "updateMode": "prefetch",
+      "patterns": [
+        "https:\\/\\/www\\.googletagmanager\\.com\\/gtag\\/js\\?id=G-SW0GW3DS0Y"
+      ],
+      "strategy": "performance",
+      "maxSize": 1,
+      "maxAge": 31104000000,
       "cacheQueryOptions": {
         "ignoreVary": true
       },
-      "urls": [],
-      "patterns": [
-        "https:\\/\\/www\\.googletagmanager\\.com\\/gtag\\/js\\?id=G-SW0GW3DS0Y"
-      ]
+      "version": 1
     }
   ],
-  "dataGroups": [],
   "hashTable": {
     "/website/assets/icons/README.md": "8f881a6ad96f231e3bc42b0c9a2917444b58c959",
     "/website/assets/icons/android-chrome-192x192.png": "1f9bce9e4e035f8c42e9b4dcc84a63c08d1fbc79",
