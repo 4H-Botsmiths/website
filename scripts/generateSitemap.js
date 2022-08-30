@@ -24,8 +24,8 @@ if (oldSitemap !== newSitemap) {
   /** Update the sitemap */
   fs.writeFileSync(path.join(__dirname, '../src/assets/sitemap.xml'), newSitemap);
   /** Ping Google and Bing that the sitemap has been updated */
-  axios.get('https://www.bing.com/ping?sitemap=https://4h-botsmiths.github.io/wesbite/assets/sitemap.xml');
-  axios.get('https://www.google.com/ping?sitemap=https://4h-botsmiths.github.io/wesbite/assets/sitemap.xml');
+  axios.get('https://www.bing.com/ping?sitemap=https://botsmiths.org/assets/sitemap.xml');
+  axios.get('https://www.google.com/ping?sitemap=https://botsmiths.org/assets/sitemap.xml');
   process.exit();
 }
 process.exit(1);
