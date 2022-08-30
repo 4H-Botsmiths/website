@@ -60,8 +60,8 @@ jobs:
   deploy:
     needs: upload
     environment:
-      name: gh-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      name: github-pages
+      url: www.botsmiths.org
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
