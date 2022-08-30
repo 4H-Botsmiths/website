@@ -1,4 +1,4 @@
 # Allow all URLs (see https://www.robotstxt.org/robotstxt.html)
 User-agent: *
 Disallow:
-Sitemap: https://4h-botsmiths.github.io/website/assets/sitemap.xml
+Sitemap: https://botsmiths.org/assets/sitemap.xml
