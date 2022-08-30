@@ -132,7 +132,7 @@
         "deploy": {
           "builder": "angular-cli-ghpages:deploy",
           "options": {
-            "baseHref": "/website/",
+            "cname": "www.botsmiths.org",
             "name": "github-actions",
             "email": "action@github.com"
           }
