@@ -16,7 +16,7 @@ const newSitemap =
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     ${sitemap.map(route =>
     `<url>
-        <loc>https://4h-botsmiths.github.io/wesbite/${route}</loc>
+        <loc>https://botsmiths.org/${route}</loc>
       </url>`).join('\n')}
     </urlset>`;
 /** Detect if the sitemap changed */
