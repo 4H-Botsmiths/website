@@ -61,7 +61,7 @@ jobs:
     needs: upload
     environment:
       name: github-pages
-      url: www.botsmiths.org
+      url: https://www.botsmiths.org
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
