@@ -21,6 +21,7 @@ export class AppComponent implements OnInit {
    * Update meta's and add route change listeners
    */
   ngOnInit(): void {
+    gtag('config', 'G-SW0GW3DS0Y', { 'color_scheme': this.colorScheme.darkMode ? 'dark' : 'light' });
     this.router.events
       .pipe(
         filter((event) => event instanceof NavigationEnd),
