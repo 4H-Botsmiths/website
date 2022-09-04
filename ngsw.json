@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1662319753426,
+  "timestamp": 1662320789158,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -242,20 +242,8 @@
   },
   "navigationUrls": [
     {
-      "positive": true,
-      "regex": "^\\/.*$"
-    },
-    {
       "positive": false,
-      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
-    },
-    {
-      "positive": false,
-      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
-    },
-    {
-      "positive": false,
-      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+      "regex": "^https:\\/\\/www\\.google-analytics\\.com\\/g\\/collect$"
     }
   ],
   "navigationRequestStrategy": "performance"
