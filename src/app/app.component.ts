@@ -21,7 +21,7 @@ export class AppComponent implements OnInit {
    * Update meta's and add route change listeners
    */
   ngOnInit(): void {
-    gtag('config', 'G-SW0GW3DS0Y', { 'color_scheme': this.colorScheme.darkMode ? 'dark' : 'light' });
+    gtag('config', 'G-CCJFLF4RHZ', { 'color_scheme': this.colorScheme.darkMode ? 'dark' : 'light' });
     this.router.events
       .pipe(
         filter((event) => event instanceof NavigationEnd),
@@ -44,7 +44,7 @@ export class AppComponent implements OnInit {
       }
       if (event instanceof NavigationEnd) {
         /** Upload Analytics */
-        gtag('config', 'G-SW0GW3DS0Y', { 'page_path': event.urlAfterRedirects });
+        gtag('config', 'G-CCJFLF4RHZ', { 'page_path': event.urlAfterRedirects });
         console.debug(event);
       }
       if (event instanceof NavigationError) {
