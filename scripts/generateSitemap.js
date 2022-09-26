@@ -5,9 +5,9 @@ const axios = require('axios').default;
 /** News posts to load links from */
 const posts = require('../src/app/news/news.json');
 /** Already saved maps */
-const routes = ['', 'news', 'sponsors', 'sponsors/options', 'sponsors/contact-us', 'contact-us', 'programs/minecraft', 'programs/fll/explore', 'programs/fll/challenge', 'programs/ftc', 'programs/frc'];
+const routes = ['', '/news', '/sponsors', '/sponsors/options', '/sponsors/contact-us', '/contact-us', '/programs/minecraft', '/programs/fll/explore', '/programs/fll/challenge', '/programs/ftc', '/programs/frc'];
 /** Posts and routes merged together */
-const sitemap = [...routes, ...posts.map(post => `news/${post.title.split(' ').join('-')}`)];
+const sitemap = [...routes, ...posts.map(post => `/news/${post.title.split(' ').join('-')}`)];
 /** The old sitemap */
 const oldSitemap = fs.readFileSync(path.join(__dirname, '../src/assets/sitemap.xml'), 'utf8');
 /** The new sitemap */
@@ -16,7 +16,7 @@ const newSitemap =
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     ${sitemap.map(route =>
     `<url>
-        <loc>https://botsmiths.org/${route}</loc>
+        <loc>https://www.botsmiths.org${route}/</loc>
       </url>`).join('\n')}
     </urlset>`;
 /** Detect if the sitemap changed */
