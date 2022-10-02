@@ -29,7 +29,7 @@ export class ImageCarouselComponent implements OnInit, OnDestroy {
     this.interval = setInterval(() => {
       console.log('rotating');
       document.getElementById('nextButton')?.click();
-    }, 1500);
+    }, 2500);
   }
   /**
    * Stop carousel rotation

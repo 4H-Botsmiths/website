@@ -62,12 +62,14 @@ const routes: Routes = [
       {
         path: 'frc', component: FrcComponent, data: {
           title: 'FRC',
+          description: 'Recommended for ages 14-18, kids design, build, and operate a large robot from custom parts to compete in a head-to-head competition in a 3-team alliance format. The size of FRC teams allows members to specialize their skills. Build season begins in January and Competitions begins in March. Teams are minimally 12 members.',
           keywords: ['FRC'],
         }
       },
       {
         path: 'ftc', component: FtcComponent, data: {
           title: 'FTC',
+          description: 'Recommended for ages 13-18, kids use Metal, plastic, and 3D-printed parts to design, build, and operate 18” robots to compete in a head-to-head challenges in a 2-team alliance format using programs written in Java. Members then compete at FIRST competitions in November and December. Teams are typically 8-15 members.',
           keywords: ['FTC'],
         }
       },
@@ -77,12 +79,14 @@ const routes: Routes = [
           {
             path: 'challenge', component: ChallengeComponent, data: {
               title: 'FLL Challenge',
+              description: 'Recommended for ages 9-13, kids use LEGO Mindstorms EV3s or LEGO Spike Prime robotics kits to design and build mobile robots to complete on an obstacle course and build moderately complex programs using block programming. Members then compete at FIRST competitions in December. Spring activities build skills for future competition. Teams are typically 4-8 members.',
               keywords: ['FLL', 'Challenge']
             }
           },
           {
             path: 'explore', component: ExploreComponent, data: {
               title: 'FLL Explore',
+              description: 'Recommended for ages 5-8, kids use LEGO Spike Essentials robotics kits to build simple robots and build basic programs with block programming. Members exhibit a project non-competitively in the spring. Parents should plan to attend.',
               keywords: ['FLL', 'Explore']
             }
           },
@@ -91,6 +95,7 @@ const routes: Routes = [
       {
         path: 'minecraft', component: MinecraftComponent, data: {
           title: 'Minecraft',
+          description: 'Recommended for ages 5-18, Join a team of youth to make scale model builds based on real places using maps, photos, and measurements. In 2021, youth built the Evergreen State Fairgrounds and in 2022, they began building the Washington D.C. State Capitol. Older youth may become involved in server administration and project management tasks.',
           keywords: ['Minecraft', 'Microsoft']
         }
       }
