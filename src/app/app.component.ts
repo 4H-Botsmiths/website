@@ -47,7 +47,7 @@ export class AppComponent implements OnInit {
         //gtag('config', 'G-CCJFLF4RHZ', { 'page_path': event.urlAfterRedirects });
         gtag('event', 'page_view', {
           page_path: event.urlAfterRedirects
-       })
+        });
         console.debug(event);
       }
       if (event instanceof NavigationError) {

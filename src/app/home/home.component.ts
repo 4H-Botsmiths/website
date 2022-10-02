@@ -12,6 +12,7 @@ import { Image, ImageFetcherService } from '../image-fetcher.service';
 })
 export class HomeComponent implements OnInit {
   public sponsorImages: Image[] = [];
+  public mapLoading = true;
 
   constructor(public colorScheme: ColorSchemeService, public imageFetcher: ImageFetcherService) { }
 
