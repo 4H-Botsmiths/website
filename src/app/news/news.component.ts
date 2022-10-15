@@ -26,8 +26,8 @@ export class NewsComponent implements OnInit, OnDestroy {
    * Setup categories and load posts
    */
   ngOnInit(): void {
-    this.categories = ["FRC", "FTC", "FLL", "FLL Challenge", "FLL Explore", "Minecraft", "Evergreen State Fair"].filter(category => news.find(post => post.categories.includes(category)));
-    news.forEach(post => post.categories.forEach(category => this.categories.includes(category) ? undefined : this.categories.push(category)));
+    this.categories = ["FRC", "FTC", "FLL", "FLL Challenge", "FLL Explore", "Minecraft", "Evergreen State Fair"].filter(category => news.find(post => (post.categories || []).includes(category)));
+    news.forEach(post => (post.categories || []).forEach(category => this.categories.includes(category) ? undefined : this.categories.push(category)));
     this.interval = setInterval(() => {
       if (this.selectedCategories.length) {
         this.selectedNews = [];

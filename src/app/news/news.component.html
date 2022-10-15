@@ -35,7 +35,7 @@
               [class.text-bg-danger]="colorScheme.lightMode" *ngFor="let category of article.categories" [innerHTML]="category"></span></h6>
           <p class="card-text" *ngIf="article.description" [innerHTML]="article.description" style="max-height: 25vh; overflow-y:hidden;">
           </p>
-          <p *ngIf="article.description?.includes('<br>')">...</p>
+          <!--<p *ngIf="article.description?.includes('<br>')">...</p>-->
           <a *ngFor="let link of (article.links || [])" class="card-link" [class.text-info]="colorScheme.darkMode" href="{{link.href}}"
             target="_blank" [innerHTML]="link.name"></a>
           <a *ngFor="let button of (article.buttons || [])" class="btn btn-primary" href="{{button.href}}" target="_blank"
