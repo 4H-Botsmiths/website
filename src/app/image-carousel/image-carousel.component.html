@@ -1,6 +1,6 @@
 <div class="container">
   <!-- Image carousel -->
-  <div id="imageCarousel" class="carousel slide" [class.carousel-dark]="colorScheme.lightMode" data-bs-ride="true" #carousel>
+  <div id="imageCarousel" class="carousel slide" [class.carousel-dark]="colorScheme.lightMode" data-bs-ride="true" #carousel *ngIf="images">
     <!-- Carousel indicators for manual carousel control -->
     <div class="carousel-indicators">
       <button *ngFor="let image of images; index as i" type="button" data-bs-target="#imageCarousel" [attr.data-bs-slide-to]="i"
