@@ -1,40 +1,35 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import * as Bootstrap from 'bootstrap';
+
+import { AfterViewInit, Component, ElementRef, Input, ViewChild } from '@angular/core';
 
 import { ColorSchemeService } from '../color-scheme.service';
 import { ImageSync } from '../image-fetcher.service';
 
 
 
+declare const bootstrap: typeof Bootstrap;
 @Component({
   // eslint-disable-next-line @angular-eslint/component-selector
   selector: 'image-carousel',
   templateUrl: './image-carousel.component.html',
   styleUrls: ['./image-carousel.component.scss']
 })
-export class ImageCarouselComponent implements OnInit, OnDestroy {
+export class ImageCarouselComponent implements AfterViewInit {
 
   /** The Images To Display*/
   @Input() images!: ImageSync[];
 
   private interval?: NodeJS.Timer;
-
-  public carouselName = 'imageCarousel' + Math.round(Math.random() * 10);
-
   constructor(public colorScheme: ColorSchemeService) {
   }
+  @ViewChild("carousel") carousel!: ElementRef;
   /**
    * Start carousel rotation
    */
-  ngOnInit(): void {
-    this.interval = setInterval(() => {
-      console.log('rotating');
-      document.getElementById('nextButton')?.click();
-    }, 2500);
-  }
-  /**
-   * Stop carousel rotation
-   */
-  ngOnDestroy(): void {
-    clearInterval(this.interval);
+  ngAfterViewInit(): void {
+    new bootstrap.Carousel(this.carousel.nativeElement, {
+      ride: "carousel",
+      interval: 2000
+    });
   }
 }
