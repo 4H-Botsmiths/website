@@ -3,24 +3,24 @@
   <div id="imageCarousel" class="carousel slide" [class.carousel-dark]="colorScheme.lightMode" data-bs-ride="true" #carousel>
     <!-- Carousel indicators for manual carousel control -->
     <div class="carousel-indicators">
-      <button *ngFor="let image of images; index as i" data-bs-target="#imageCarousel" [attr.data-bs-slide-to]="i"
-        [attr.aria-label]="'Slide '+ (i+1)" [class.active]="i === 0" [attr.aria-current]="i === 0" [title]="'Slide '+ (i+1)"></button>
+      <button *ngFor="let image of images; index as i" type="button" data-bs-target="#imageCarousel" [attr.data-bs-slide-to]="i"
+        [class.active]="i === 0" [attr.aria-current]="i === 0" attr.aria-label="Slide {{i+1}}"></button>
     </div>
     <div class="carousel-inner d-flex align-items-center" style="height: 50vw">
       <!-- Carousel images -->
-      <div class="carousel-item" *ngFor="let image of images; index as i" [class.active]="i === 0">
-        <img alt="{{image.src}}" src="{{image.src}}" class="w-100 h-100" [class.active]="i === 0" [attr.aria-current]="i === 0">
-        <div class="carousel-caption d-none d-md-block">
+      <div *ngFor="let image of images; index as i" class="carousel-item" [class.active]="i === 0">
+        <img [src]="image.src" [alt]="image.src" class="w-100">
+        <!--<div class="carousel-caption d-none d-md-block">
           <h5 *ngIf="image.title">{{image.title}}</h5>
           <p *ngIf="image.description">{{image.description}}</p>
-        </div>
+        </div>-->
       </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev" id="backButton">
+    <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>
     </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next" id="nextButton">
+    <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
     </button>
