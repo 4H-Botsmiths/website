@@ -14,8 +14,7 @@ import { ColorSchemeService } from '../color-scheme.service';
 export class PageNotFoundComponent implements OnInit, OnDestroy {
   public countdown = 4;
   public url?: string;
-  public redirect = false;
-
+  public urls: string[] = [];
   constructor(public colorScheme: ColorSchemeService, private meta: Meta, private router: Router) { }
 
   /**
@@ -25,26 +24,27 @@ export class PageNotFoundComponent implements OnInit, OnDestroy {
     this.meta.addTag({ name: 'robots', content: 'NOINDEX' });
     const url = this.router.url;
     if (url.includes('frc')) {
-      this.prepareRedirect('/programs/frc');
-    } else if (url.includes('ftc')) {
-      this.prepareRedirect('/programs/ftc');
-    } else if (url.includes('fll')) {
+      this.urls.push('/programs/frc');
+    } if (url.includes('ftc')) {
+      this.urls.push('/programs/ftc');
+    } if (url.includes('fll')) {
       if (url.includes('explore')) {
-        this.prepareRedirect('/programs/fll/explore');
+        this.urls.push('/programs/fll/explore');
+        this.urls.push('/programs/fll/challenge');
       } else {
-        this.prepareRedirect('/programs/fll/challenge');
+        this.urls.push('/programs/fll/challenge');
+        this.urls.push('/programs/fll/explore');
       }
-    } else if (url.includes('minecraft')) {
-      this.prepareRedirect('/programs/minecraft');
+    } if (url.includes('minecraft')) {
+      this.urls.push('/programs/minecraft');
+    }
+    if (this.urls.length) {
+      this.url = this.urls[0];
+      this.countdownRedirect();
     }
   }
-  prepareRedirect(url: string): void {
-    this.url = url;
-    this.redirect = true;
-    this.countdownRedirect();
-  }
   countdownRedirect() {
-    if (!this.redirect) return;
+    if (!this.url) return;
     this.countdown!--;
     setTimeout(() => {
       if (this.countdown <= 0) {

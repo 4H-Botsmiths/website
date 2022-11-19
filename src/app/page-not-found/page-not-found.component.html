@@ -1,32 +1,20 @@
-<div *ngIf="!redirect">
-  <div class="text-center">
-    <h1>Error 404</h1>
-    <h2>Page Not Found</h2>
-    <br>
-    <h4 *ngIf="url">Maybe you wanted: <a [routerLink]="url" [class.link-info]="colorScheme.darkMode">https://www.botsmiths.org{{url}}</a>
-    </h4>
-  </div>
-  <div class="text-center" style="display:none">
-    <ul>
-      <h3>Maybe You Were Looking For </h3>
-      <li>Our <a [class.text-info]="colorScheme.darkMode" routerLink="/home">Homepage</a></li>
-      <li>Our <a [class.text-info]="colorScheme.darkMode" routerLink="/sponsors">Sponsors</a> Page</li>
-      <li>Our <a [class.text-info]="colorScheme.darkMode" routerLink="/news">News</a> Page</li>
-      <li>Our <a [class.text-info]="colorScheme.darkMode" routerLink="/programs/frc">FRC</a> Team</li>
-      <li>Our <a [class.text-info]="colorScheme.darkMode" routerLink="/programs/ftc">FTC</a> Team</li>
-      <li>Our <a [class.text-info]="colorScheme.darkMode" routerLink="/programs/fll/challenge">FLL</a> Team</li>
-      <li>Our <a [class.text-info]="colorScheme.darkMode" routerLink="/programs/fll/explore">FLL Jr.</a> Team</li>
-      <li>Our <a [class.text-info]="colorScheme.darkMode" routerLink="/programs/minecraft">Minecraft</a> Team</li>
-    </ul>
-  </div>
+<div class="text-center" *ngIf="!url">
+  <h1>Error 404</h1>
+  <h2>Page Not Found</h2>
 </div>
-<div *ngIf="redirect">
-  <div class="text-center">
-    <h3 *ngIf="countdown > 0">Redirecting to <a [routerLink]="url"
-        [class.link-info]="colorScheme.darkMode">https://www.botsmiths.org{{url}}</a> in {{countdown}}
-    </h3>
-    <h3 *ngIf="countdown === 0">Redirecting...</h3>
-    <br>
-    <button type="button" (click)="redirect = false" class="btn btn-secondary">Cancel</button>
-  </div>
+<div class="text-center" *ngIf="url">
+  <h3 *ngIf="countdown > 0">Redirecting to <a [routerLink]="url"
+      [class.link-info]="colorScheme.darkMode">https://www.botsmiths.org{{url}}</a> in {{countdown}}
+  </h3>
+  <h3 *ngIf="countdown === 0">Redirecting...</h3>
+  <br>
+  <button type="button" (click)="url = undefined" class="btn btn-secondary">Cancel</button>
+</div>
+<div class="text-center">
+  <br>
+  <h4 *ngIf="urls.length">Maybe you wanted: </h4>
+  <ul>
+    <li *ngFor="let url1 of urls" class="h5"><a [routerLink]="url1"
+        [class.link-info]="colorScheme.darkMode">https://www.botsmiths.org{{url1}}</a></li>
+  </ul>
 </div>
