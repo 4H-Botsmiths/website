@@ -15,6 +15,38 @@
           "name": "challenge",
           "children": [
             {
+              "path": "/assets/images/fll/challenge/394943BA-A667-4DED-8546-CA67152A59A4_1_105_c.jpeg",
+              "name": "394943BA-A667-4DED-8546-CA67152A59A4_1_105_c.jpeg"
+            },
+            {
+              "path": "/assets/images/fll/challenge/4EF82B27-5E46-4127-9044-51CFF9757677_1_105_c.jpeg",
+              "name": "4EF82B27-5E46-4127-9044-51CFF9757677_1_105_c.jpeg"
+            },
+            {
+              "path": "/assets/images/fll/challenge/79DF6A45-BE2F-4526-9A03-AFEFD4181A7D_1_105_c.jpeg",
+              "name": "79DF6A45-BE2F-4526-9A03-AFEFD4181A7D_1_105_c.jpeg"
+            },
+            {
+              "path": "/assets/images/fll/challenge/84C13A43-99E0-4311-B812-92456F444E7F_1_105_c.jpeg",
+              "name": "84C13A43-99E0-4311-B812-92456F444E7F_1_105_c.jpeg"
+            },
+            {
+              "path": "/assets/images/fll/challenge/8F45F65F-F6AC-4599-80E7-95894A759819_1_105_c.jpeg",
+              "name": "8F45F65F-F6AC-4599-80E7-95894A759819_1_105_c.jpeg"
+            },
+            {
+              "path": "/assets/images/fll/challenge/AA9850F6-9859-4A14-BBA0-A0C32CD8F57B_1_105_c.jpeg",
+              "name": "AA9850F6-9859-4A14-BBA0-A0C32CD8F57B_1_105_c.jpeg"
+            },
+            {
+              "path": "/assets/images/fll/challenge/E1B26C77-E54F-4057-AB90-F8F79F90BE14_1_105_c.jpeg",
+              "name": "E1B26C77-E54F-4057-AB90-F8F79F90BE14_1_105_c.jpeg"
+            },
+            {
+              "path": "/assets/images/fll/challenge/EBF9A230-2458-4088-9B91-F94673E6FD2C_1_105_c.jpeg",
+              "name": "EBF9A230-2458-4088-9B91-F94673E6FD2C_1_105_c.jpeg"
+            },
+            {
               "path": "/assets/images/fll/challenge/IMG_1091.jpeg",
               "name": "IMG_1091.jpeg"
             },
@@ -25,6 +57,10 @@
             {
               "path": "/assets/images/fll/challenge/IMG_1093.jpeg",
               "name": "IMG_1093.jpeg"
+            },
+            {
+              "path": "/assets/images/fll/challenge/display.jpeg",
+              "name": "display.jpeg"
             }
           ]
         },
