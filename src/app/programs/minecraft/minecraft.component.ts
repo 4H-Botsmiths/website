@@ -1,4 +1,4 @@
-import { ImageFetcherService, ImageSync } from 'src/app/image-fetcher.service';
+import { Images, ImageService } from 'src/app/image.service';
 
 import { Component, OnInit } from '@angular/core';
 
@@ -10,14 +10,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./minecraft.component.scss']
 })
 export class MinecraftComponent implements OnInit {
-  public minecraftImages: ImageSync[] = [];
+  public minecraftImages: Images = [];
+  public minecraftImage?: Images[number];
 
-  constructor(public imageFetcher: ImageFetcherService) { }
+  constructor(public imageService: ImageService) { }
 
   /**
    * Fetch images
    */
   ngOnInit() {
-    this.minecraftImages = this.imageFetcher.getImagesSync('minecraft');
+    this.minecraftImages = this.imageService.find('minecraft')!;
+    this.minecraftImage = this.imageService.extractDisplay(this.minecraftImages);
   }
 }

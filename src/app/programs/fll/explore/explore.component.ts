@@ -1,4 +1,4 @@
-import { ImageFetcherService, ImageSync } from 'src/app/image-fetcher.service';
+import { Images, ImageService } from 'src/app/image.service';
 
 import { Component, OnInit } from '@angular/core';
 
@@ -10,15 +10,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./explore.component.scss']
 })
 export class ExploreComponent implements OnInit {
-  public fllExploreImage?: ImageSync;
-  public fllExploreImages: ImageSync[] = [];
+  public fllExploreImage?: Images[number];
+  public fllExploreImages: Images = [];
 
-  constructor(public imageFetcher: ImageFetcherService) { }
+  constructor(private imageService: ImageService) { }
   /**
    * Fetch images
    */
   ngOnInit() {
-    this.fllExploreImages = this.imageFetcher.getImagesSync('fll/explore');
-    this.fllExploreImage = this.imageFetcher.getImagesSync('all').find(image => image.title === 'fll explore team');
+    this.fllExploreImages = this.imageService.find('fll')!.find(program => program.name === 'challenge')?.children!;
+    this.fllExploreImage = this.imageService.extractDisplay(this.fllExploreImages);
   }
 }

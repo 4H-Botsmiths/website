@@ -6,13 +6,14 @@
     run a fully online Minecraft group </p>
   <h5>UPDATE: Our workshop has been relocated to <a
       href="https://maps.apple.com/?t=k&address=15019%20Three%20Lakes%20Rd,%0ASnohomish,%20WA%2098290&z=2"
-      [class.text-info]="colorScheme.darkMode" target="_blank"><address>15019 Three Lakes Rd, Snohomish, WA 98290</address></a></h5>
+      [class.text-info]="colorScheme.darkMode" target="_blank">
+      <address>15019 Three Lakes Rd, Snohomish, WA 98290</address>
+    </a></h5>
   <!-- Embedded Map -->
   <div class="iframe-div" [class.d-none]="mapLoading">
     <a href="https://maps.apple.com/?t=k&address=15019%20Three%20Lakes%20Rd,%0ASnohomish,%20WA%2098290&z=2" class="iframe-link"
       [class.text-info]="colorScheme.darkMode" target="_blank"></a>
-    <iframe src="https://maps.google.com/maps?q=15019%20Three%20Lakes%20Rd,%20Snohomish,%20WA%2098290&t=k&z=13&ie=UTF8&iwloc=&output=embed"
-      name="15019 Three Lakes Rd, Snohomish, WA 98290" allowfullscreen=true class="w-100 h-100" (load)="mapLoading=false"></iframe>
+    <iframe #iframe name="15019 Three Lakes Rd, Snohomish, WA 98290" allowfullscreen=true class="w-100 h-100"></iframe>
   </div>
 </div>
 <image-gallery [images]="sponsorImages"></image-gallery>

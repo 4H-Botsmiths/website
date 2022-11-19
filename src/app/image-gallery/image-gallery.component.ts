@@ -1,6 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 
-import { Image } from '../image-fetcher.service';
+import { Images } from '../image.service';
 
 
 
@@ -10,14 +10,43 @@ import { Image } from '../image-fetcher.service';
   templateUrl: './image-gallery.component.html',
   styleUrls: ['./image-gallery.component.scss']
 })
-export class ImageGalleryComponent {
+export class ImageGalleryComponent implements OnInit, AfterViewInit {
   /** What photos to load */
-  @Input() images!: Image[];
-
+  @Input() images!: Images;
+  public sortedImages: HTMLImageElement[] = [];
   constructor() {
   }
+  @ViewChild('grid') grid!: ElementRef;
+  ngAfterViewInit(): void {
+    const interval = setInterval(() => {
+      if (this.sortedImages.length) {
+        clearInterval(interval);
+        for (const image of this.sortedImages) {
+          this.grid.nativeElement.appendChild(image);
+        }
+      }
+    }, 500);
+  }
+  ngOnInit(): void {
+    const images: HTMLImageElement[] = [];
+    for (const image of this.images) {
+      const img = new Image();
+      img.onload = () => {
+        images.push(img);
+      };
+      img.onerror = () => {
+        images.push(img);
+      };
+      img.src = image.path;
+      img.alt = image.name;
+      img.classList.add('col');
 
-  getImagesSync(): Image[] {
-    return this.images?.sort((a, b) => a.width - b.width) ?? [];
+    }
+    const interval = setInterval(() => {
+      if (images.length === this.images.length) {
+        clearInterval(interval);
+        this.sortedImages = images.sort((a, b) => a.naturalWidth - b.naturalWidth);
+      }
+    }, 500);
   }
 }

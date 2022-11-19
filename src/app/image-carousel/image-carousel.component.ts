@@ -3,7 +3,7 @@ import * as Bootstrap from 'bootstrap';
 import { AfterViewInit, Component, ElementRef, Input, ViewChild } from '@angular/core';
 
 import { ColorSchemeService } from '../color-scheme.service';
-import { ImageSync } from '../image-fetcher.service';
+import { Images } from '../image.service';
 
 
 
@@ -17,7 +17,7 @@ declare const bootstrap: typeof Bootstrap;
 export class ImageCarouselComponent implements AfterViewInit {
 
   /** The Images To Display*/
-  @Input() images!: ImageSync[];
+  @Input() images!: Images;
 
   private interval?: NodeJS.Timer;
   constructor(public colorScheme: ColorSchemeService) {

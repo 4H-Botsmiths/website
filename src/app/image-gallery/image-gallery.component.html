@@ -1,11 +1,9 @@
 <div class="container">
   <!-- Image gallery -->
-  <div class="row row-cols-auto justify-content-around align-items-center">
+  <div class="row row-cols-auto justify-content-around align-items-center" #grid>
     <!-- Gallery images -->
-    <div class="col" *ngFor="let image of getImagesSync()">
-      <img alt="{{image.title || image.src}}" src="{{image.src}}" class="w-100">
-      <h5 *ngIf="image.title" class="text-center">{{image.title}}</h5>
-      <p *ngIf="image.description" class="text-center">{{image.description}}</p>
-    </div>
+    <!--<div class="col" *ngFor="let image of sortedImages">
+      <img class="w-100">
+    </div>-->
   </div>
 </div>

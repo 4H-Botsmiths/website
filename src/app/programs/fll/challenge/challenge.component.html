@@ -1,7 +1,7 @@
 <div class="card text-center container color-scheme-secondary w-75">
   <div class="card-header">
   </div>
-  <img src="{{fllChallengeImage?.src}}" class="card-img-top w-100 h-100" alt="FLL Challenge Image">
+  <img [src]="fllChallengeImage?.path" class="card-img-top w-100 h-100" [alt]="fllChallengeImage?.name">
   <div class="card-body">
     <h3 class="card-title">FLL Challenge - Team 22311</h3>
     <h4 class="card-subtitle mb-2 text-muted">FIRST Lego League Challenge</h4>

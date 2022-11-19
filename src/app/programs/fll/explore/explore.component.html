@@ -1,7 +1,7 @@
 <div class="card text-center container color-scheme-secondary w-75">
   <div class="card-header">
   </div>
-  <img src="{{fllExploreImage?.src}}" class="card-img-top w-100 h-100" alt="FLL Explore Image">
+  <img [src]="fllExploreImage?.path" class="card-img-top w-100 h-100" [alt]="fllExploreImage?.name">
   <div class="card-body">
     <h3 class="card-title">FLL Explore - Team 8999</h3>
     <h4 class="card-subtitle mb-2 text-muted">FIRST Lego League Explore</h4>

@@ -4,7 +4,6 @@ import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angula
 import { NavigationEnd, NavigationStart, Router } from '@angular/router';
 
 import { ColorSchemeService } from '../color-scheme.service';
-import { ImageFetcherService } from '../image-fetcher.service';
 import sponsorOptions from './sponsorOptions.json';
 import sponsors from './sponsors.json';
 
@@ -29,7 +28,7 @@ export class SponsorsComponent implements OnInit, AfterViewInit {
     additionalInfo: ''
   };
   interval!: NodeJS.Timer;
-  constructor(public colorScheme: ColorSchemeService, public imageFetcher: ImageFetcherService, public router: Router) { }
+  constructor(public colorScheme: ColorSchemeService, public router: Router) { }
 
   /**
    * add sponsor options Modal listeners
