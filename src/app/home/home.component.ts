@@ -24,10 +24,13 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
   @ViewChild('iframe') iframe!: ElementRef;
   ngAfterViewInit(): void {
-    const iframe: HTMLIFrameElement = this.iframe.nativeElement;
-    iframe.onload = () => {
-      this.mapLoading = false;
+    window.onload = () => {
+      const iframe: HTMLIFrameElement = this.iframe.nativeElement;
+      // your code here
+      iframe.onload = () => {
+        this.mapLoading = false;
+      };
+      iframe.src = 'https://maps.google.com/maps?q=15019%20Three%20Lakes%20Rd,%20Snohomish,%20WA%2098290&t=k&z=13&ie=UTF8&iwloc=&output=embed';
     };
-    iframe.src = 'https://maps.google.com/maps?q=15019%20Three%20Lakes%20Rd,%20Snohomish,%20WA%2098290&t=k&z=13&ie=UTF8&iwloc=&output=embed';
   }
 }
