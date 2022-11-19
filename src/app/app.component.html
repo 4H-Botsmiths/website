@@ -27,7 +27,7 @@
         </li>
         <li class="nav-item dropdown">
           <a #programsDropdown class="dropdown-toggle nav-link" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
-            data-bs-auto-close="false" aria-expanded="false" [attr.aria-current]="routerLinkActive('/programs') ? 'page' : null"
+            data-bs-auto-close="outside" aria-expanded="false" [attr.aria-current]="routerLinkActive('/programs') ? 'page' : null"
             [class.active]="routerLinkActive('/programs')" [class.text-warning]="routerLinkActive('/programs') && colorScheme.darkMode"
             [class.text-danger]="routerLinkActive('/programs') && colorScheme.lightMode"> Programs </a>
           <!-- Programs dropdown -->
@@ -44,7 +44,7 @@
                 data-bs-toggle="dropdown" aria-expanded="false" [attr.aria-current]="routerLinkActive('/programs/fll') ? 'page' : null"
                 [class.active]="routerLinkActive('/programs/fll')"
                 [class.text-warning]="routerLinkActive('/programs/fll') && colorScheme.darkMode"
-                [class.text-danger]="routerLinkActive('/programs/fll') && colorScheme.lightMode" data-bs-auto-close="false"> FLL </a>
+                [class.text-danger]="routerLinkActive('/programs/fll') && colorScheme.lightMode" data-bs-auto-close="true"> FLL </a>
               <!-- FLL programs dropdown -->
               <ul class="dropdown-menu ms-3 ms-lg-0 color-scheme-quaternary" aria-labelledby="navbarDropdownMenuFLLLink"
                 [class.dropdown-menu-dark]="colorScheme.darkMode">
