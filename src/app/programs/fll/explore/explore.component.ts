@@ -18,7 +18,7 @@ export class ExploreComponent implements OnInit {
    * Fetch images
    */
   ngOnInit() {
-    this.fllExploreImages = this.imageService.find('fll')!.find(program => program.name === 'challenge')?.children!;
+    this.fllExploreImages = this.imageService.find('fll')!.find(program => program.name === 'explore')?.children!;
     this.fllExploreImage = this.imageService.extractDisplay(this.fllExploreImages);
   }
 }
