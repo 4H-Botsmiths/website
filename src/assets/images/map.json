@@ -1,52 +1,231 @@
-[
-  {
-    "type": "file",
-    "path": "frc_team.jpg",
-    "name": "frc team"
-  },
-  {
-    "type": "file",
-    "path": "ftc_team.JPG",
-    "name": "ftc team"
-  },
-  {
-    "type": "file",
-    "path": "minecraft_team.png",
-    "name": "minecraft team"
-  },
-  {
-    "type": "file",
-    "name": "logo",
-    "path": "logo.png"
-  },
-  {
-    "type": "file",
-    "path": "IMG_1009.jpeg",
-    "name": "Robot Arm"
-  },
-  {
-    "type": "file",
-    "path": "og-image.jpg",
-    "name": "og image"
-  },
-  {
-    "type": "directory",
-    "path": "sponsors"
-  },
-  {
-    "type": "directory",
-    "path": "frc"
-  },
-  {
-    "type": "directory",
-    "path": "ftc"
-  },
-  {
-    "type": "directory",
-    "path": "fll"
-  },
-  {
-    "type": "directory",
-    "path": "minecraft"
-  }
-]
+{
+  "path": "/assets/images",
+  "name": "images",
+  "children": [
+    {
+      "path": "/assets/images/IMG_1009.jpeg",
+      "name": "IMG_1009.jpeg"
+    },
+    {
+      "path": "/assets/images/fll",
+      "name": "fll",
+      "children": [
+        {
+          "path": "/assets/images/fll/challenge",
+          "name": "challenge",
+          "children": [
+            {
+              "path": "/assets/images/fll/challenge/IMG_1091.jpeg",
+              "name": "IMG_1091.jpeg"
+            },
+            {
+              "path": "/assets/images/fll/challenge/IMG_1092.jpeg",
+              "name": "IMG_1092.jpeg"
+            },
+            {
+              "path": "/assets/images/fll/challenge/IMG_1093.jpeg",
+              "name": "IMG_1093.jpeg"
+            }
+          ]
+        },
+        {
+          "path": "/assets/images/fll/explore",
+          "name": "explore",
+          "children": []
+        }
+      ]
+    },
+    {
+      "path": "/assets/images/frc",
+      "name": "frc",
+      "children": [
+        {
+          "path": "/assets/images/frc/20220716_101301.jpg",
+          "name": "20220716_101301.jpg"
+        },
+        {
+          "path": "/assets/images/frc/20220716_101638.jpg",
+          "name": "20220716_101638.jpg"
+        },
+        {
+          "path": "/assets/images/frc/67968578230__BD77B0B3-D1AE-4690-A8A6-EC63E3C0B2C0.jpeg",
+          "name": "67968578230__BD77B0B3-D1AE-4690-A8A6-EC63E3C0B2C0.jpeg"
+        },
+        {
+          "path": "/assets/images/frc/IMG_1007.jpeg",
+          "name": "IMG_1007.jpeg"
+        },
+        {
+          "path": "/assets/images/frc/IMG_1011.jpeg",
+          "name": "IMG_1011.jpeg"
+        },
+        {
+          "path": "/assets/images/frc/IMG_1163.jpeg",
+          "name": "IMG_1163.jpeg"
+        },
+        {
+          "path": "/assets/images/frc/IMG_1478.jpeg",
+          "name": "IMG_1478.jpeg"
+        },
+        {
+          "path": "/assets/images/frc/IMG_1490.jpeg",
+          "name": "IMG_1490.jpeg"
+        },
+        {
+          "path": "/assets/images/frc/IMG_1517.jpeg",
+          "name": "IMG_1517.jpeg"
+        },
+        {
+          "path": "/assets/images/frc/IMG_1922.jpeg",
+          "name": "IMG_1922.jpeg"
+        },
+        {
+          "path": "/assets/images/frc/IMG_1927.jpeg",
+          "name": "IMG_1927.jpeg"
+        },
+        {
+          "path": "/assets/images/frc/IMG_8144.jpg",
+          "name": "IMG_8144.jpg"
+        },
+        {
+          "path": "/assets/images/frc/display.jpg",
+          "name": "display.jpg"
+        }
+      ]
+    },
+    {
+      "path": "/assets/images/ftc",
+      "name": "ftc",
+      "children": [
+        {
+          "path": "/assets/images/ftc/20211120_100138.jpg",
+          "name": "20211120_100138.jpg"
+        },
+        {
+          "path": "/assets/images/ftc/20211202_080113.jpg",
+          "name": "20211202_080113.jpg"
+        },
+        {
+          "path": "/assets/images/ftc/83ABBFF3-7A9D-4926-BF19-A7A158E2799A.jpg",
+          "name": "83ABBFF3-7A9D-4926-BF19-A7A158E2799A.jpg"
+        },
+        {
+          "path": "/assets/images/ftc/8ebff3_04b7365d9c6a4ba48e946cf236b78a19~mv2.png",
+          "name": "8ebff3_04b7365d9c6a4ba48e946cf236b78a19~mv2.png"
+        },
+        {
+          "path": "/assets/images/ftc/8ebff3_48474f911b1642119d85b4003abd3dd8~mv2.png",
+          "name": "8ebff3_48474f911b1642119d85b4003abd3dd8~mv2.png"
+        },
+        {
+          "path": "/assets/images/ftc/8ebff3_5fe6101882f74d8d90fd8f15873cdaf6~mv2.png",
+          "name": "8ebff3_5fe6101882f74d8d90fd8f15873cdaf6~mv2.png"
+        },
+        {
+          "path": "/assets/images/ftc/8ebff3_9b2893b2564b4484adfb28d403712822~mv2.png",
+          "name": "8ebff3_9b2893b2564b4484adfb28d403712822~mv2.png"
+        },
+        {
+          "path": "/assets/images/ftc/8ebff3_db7f11f20d554b91b1cdf28f50fd7e7d~mv2.png",
+          "name": "8ebff3_db7f11f20d554b91b1cdf28f50fd7e7d~mv2.png"
+        },
+        {
+          "path": "/assets/images/ftc/IMG_1264.jpeg",
+          "name": "IMG_1264.jpeg"
+        },
+        {
+          "path": "/assets/images/ftc/IMG_1268.jpeg",
+          "name": "IMG_1268.jpeg"
+        },
+        {
+          "path": "/assets/images/ftc/IMG_1347.jpg",
+          "name": "IMG_1347.jpg"
+        },
+        {
+          "path": "/assets/images/ftc/KIMG1233.JPG",
+          "name": "KIMG1233.JPG"
+        },
+        {
+          "path": "/assets/images/ftc/display.JPG",
+          "name": "display.JPG"
+        }
+      ]
+    },
+    {
+      "path": "/assets/images/logo.png",
+      "name": "logo.png"
+    },
+    {
+      "path": "/assets/images/minecraft",
+      "name": "minecraft",
+      "children": [
+        {
+          "path": "/assets/images/minecraft/2021-12-10_20.08.21.png",
+          "name": "2021-12-10_20.08.21.png"
+        },
+        {
+          "path": "/assets/images/minecraft/2021-12-10_20.12.16.png",
+          "name": "2021-12-10_20.12.16.png"
+        },
+        {
+          "path": "/assets/images/minecraft/2022-05-20_20.15.11.png",
+          "name": "2022-05-20_20.15.11.png"
+        },
+        {
+          "path": "/assets/images/minecraft/AMassiveTree.png",
+          "name": "AMassiveTree.png"
+        },
+        {
+          "path": "/assets/images/minecraft/A_Minecraft_Xmas.png",
+          "name": "A_Minecraft_Xmas.png"
+        },
+        {
+          "path": "/assets/images/minecraft/Screen_Shot_2022-05-20_at_7.58.15_PM.png",
+          "name": "Screen_Shot_2022-05-20_at_7.58.15_PM.png"
+        },
+        {
+          "path": "/assets/images/minecraft/display.png",
+          "name": "display.png"
+        }
+      ]
+    },
+    {
+      "path": "/assets/images/og-image.jpg",
+      "name": "og-image.jpg"
+    },
+    {
+      "path": "/assets/images/sponsors",
+      "name": "sponsors",
+      "children": [
+        {
+          "path": "/assets/images/sponsors/4-H.gif",
+          "name": "4-H.gif"
+        },
+        {
+          "path": "/assets/images/sponsors/Microsoft.png",
+          "name": "Microsoft.png"
+        },
+        {
+          "path": "/assets/images/sponsors/NASA.png",
+          "name": "NASA.png"
+        },
+        {
+          "path": "/assets/images/sponsors/andymark.jpg",
+          "name": "andymark.jpg"
+        },
+        {
+          "path": "/assets/images/sponsors/boeing.png",
+          "name": "boeing.png"
+        },
+        {
+          "path": "/assets/images/sponsors/ni.jpg",
+          "name": "ni.jpg"
+        },
+        {
+          "path": "/assets/images/sponsors/solidworks.png",
+          "name": "solidworks.png"
+        }
+      ]
+    }
+  ]
+}
