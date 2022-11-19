@@ -2,8 +2,6 @@
   <h4>Thank you for your generous donation to our cause, we couldn't do it without you.</h4>
   <h5>Want to get your organization out their while also supporting our teams?</h5>
   <a class="h5" [class.link-info]="colorScheme.darkMode" routerLink="./options">Become a sponsor</a>
-  <!-- Button to actually toggle pop-up -->
-  <a #sponsorModalButton data-bs-toggle="modal" data-bs-target="#sponsorModal" id="displaySponsorOptions"></a>
 </div>
 <!-- Mail instructions pop-up -->
 <div class="modal fade" id="contactUsPopup" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
@@ -27,15 +25,14 @@
   </div>
 </div>
 <!-- Sponsorship Modal -->
-<div #sponsorModal class="modal fade" id="sponsorModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-  aria-labelledby="sponsorModalLabel" aria-hidden="true">
+<div #modal class="modal fade" id="sponsorModal" tabindex="-1" aria-labelledby="sponsorModalLabel" aria-hidden="true">
   <!-- Sponsorship options anf contact-us form -->
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
     <div class="modal-content color-scheme-secondary">
       <div class="modal-header color-scheme-tertiary">
         <h5 class="modal-title" id="sponsorModalLabel">Sponsorship Info</h5>
-        <button type="button" class="btn-close" [class.btn-close-white]="colorScheme.darkMode" data-bs-dismiss="modal" aria-label="Close"
-          routerLink="/sponsors"></button>
+        <button type="button" class="btn-close" [class.btn-close-white]="colorScheme.darkMode" data-bs-dismiss="modal"
+          aria-label="Close"></button>
       </div>
       <div class="modal-body color-scheme-quaternary">
         <!-- Sponsorship Tabs -->
@@ -110,7 +107,7 @@
         </div>
       </div>
       <div class="modal-footer color-scheme-tertiary">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" routerLink="/sponsors">Close</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
