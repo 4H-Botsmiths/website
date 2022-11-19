@@ -15,7 +15,7 @@ import { SponsorsComponent } from './sponsors/sponsors.component';
 
 
 
-const routes: Routes = [
+export const routes: Routes = [
   {
     path: '', component: HomeComponent, data: {
       title: 'Home',
@@ -23,7 +23,7 @@ const routes: Routes = [
       keywords: ['Home'],
     }
   },
-  { path: 'home', redirectTo: '' },
+  { path: 'home', redirectTo: '', pathMatch: 'full' },
   {
     path: 'sponsors', component: SponsorsComponent, data: {
       title: 'Sponsors',

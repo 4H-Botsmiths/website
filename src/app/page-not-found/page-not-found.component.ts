@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Meta } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 
+import { routes as Routes } from '../app-routing.module';
 import { ColorSchemeService } from '../color-scheme.service';
 
 
@@ -23,23 +24,21 @@ export class PageNotFoundComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.meta.addTag({ name: 'robots', content: 'NOINDEX' });
     const url = this.router.url;
-    if (url.includes('frc')) {
-      this.urls.push('/programs/frc');
-    } if (url.includes('ftc')) {
-      this.urls.push('/programs/ftc');
-    } if (url.includes('fll')) {
-      if (url.includes('explore')) {
-        this.urls.push('/programs/fll/explore');
-        this.urls.push('/programs/fll/challenge');
-      } else {
-        this.urls.push('/programs/fll/challenge');
-        this.urls.push('/programs/fll/explore');
+    const findRoutes = (path: string, routes?: typeof Routes) => {
+      for (const route of routes ?? Routes) {
+        if (route.path) {
+          if (route.children) {
+            findRoutes(`${path}/${route.path}`, route.children);
+          } if (url.includes(route.path)) {
+            this.urls.push(`${path}/${route.path}`);
+          }
+
+        }
       }
-    } if (url.includes('minecraft')) {
-      this.urls.push('/programs/minecraft');
-    }
+    };
+    findRoutes('');
     if (this.urls.length) {
-      this.url = this.urls[0];
+      this.url = this.urls.shift();
       this.countdownRedirect();
     }
   }

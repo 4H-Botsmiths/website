@@ -8,7 +8,7 @@
   </h3>
   <h3 *ngIf="countdown === 0">Redirecting...</h3>
   <br>
-  <button type="button" (click)="url = undefined" class="btn btn-secondary">Cancel</button>
+  <button type="button" (click)="urls.unshift(url); url = undefined" class="btn btn-secondary">Cancel</button>
 </div>
 <div class="text-center">
   <br>
