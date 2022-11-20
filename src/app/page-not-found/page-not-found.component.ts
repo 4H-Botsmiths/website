@@ -29,10 +29,16 @@ export class PageNotFoundComponent implements OnInit, OnDestroy {
         if (route.path) {
           if (route.children) {
             findRoutes(`${path}/${route.path}`, route.children);
+            if (url.includes(route.path)) {
+              for (const child of route.children) {
+                if (child.path && !this.urls.find(url => url.endsWith(child.path!))) {
+                  this.urls.push(`${path}/${route.path}/${child.path}`);
+                }
+              }
+            }
           } else if (url.includes(route.path) && route.redirectTo === undefined) {
             this.urls.push(`${path}/${route.path}`);
           }
-
         }
       }
     };

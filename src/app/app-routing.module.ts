@@ -58,7 +58,7 @@ export const routes: Routes = [
   },
   {
     path: 'programs', children: [
-      { path: '', redirectTo: 'frc', pathMatch: 'full' },
+      { path: '', component: PageNotFoundComponent, pathMatch: 'full' },
       {
         path: 'frc', component: FrcComponent, data: {
           title: 'FRC',
@@ -75,7 +75,7 @@ export const routes: Routes = [
       },
       {
         path: 'fll', children: [
-          { path: '', redirectTo: 'challenge', pathMatch: 'full' },
+          { path: '', component: PageNotFoundComponent, pathMatch: 'full' },
           {
             path: 'challenge', component: ChallengeComponent, data: {
               title: 'FLL Challenge',
