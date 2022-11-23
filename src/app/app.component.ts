@@ -17,7 +17,7 @@ declare const gtag: Function;
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  constructor(public colorScheme: ColorSchemeService, public router: Router, private metaService: MetaService, private activatedRoute: ActivatedRoute, private imageService: ImageService) { }
+  constructor(public colorScheme: ColorSchemeService, public router: Router, private metaService: MetaService, private activatedRoute: ActivatedRoute, _imageService: ImageService) { }
   /**
    * Update meta's and add route change listeners
    */
