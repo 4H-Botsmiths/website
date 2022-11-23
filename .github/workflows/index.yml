@@ -31,7 +31,8 @@ jobs:
           npm run index
           git config --local user.email "action@github.com"
           git config --local user.name "github-actions"
-          git commit -a -m "Indexed Images"
+          git add -a
+          git commit -m "Indexed Images"
 
       - name: Push changes
         uses: ad-m/github-push-action@master
