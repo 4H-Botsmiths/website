@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1669245065356,
+  "timestamp": 1669245211303,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -78,6 +78,7 @@
         "/assets/images/ftc/display.JPG",
         "/assets/images/ftc/map.json",
         "/assets/images/logo.png",
+        "/assets/images/map.data.json",
         "/assets/images/map.json",
         "/assets/images/minecraft/2021-12-10_20.08.21.png",
         "/assets/images/minecraft/2021-12-10_20.12.16.png",
@@ -208,6 +209,7 @@
     "/assets/images/ftc/display.JPG": "a58d17cdd1f9ec2518120a70ccba872438af4c96",
     "/assets/images/ftc/map.json": "2915a4e303f06253d03700cfd02b8f3baf255b75",
     "/assets/images/logo.png": "99a57ab134588aabf9b2bef1133941b9f2406fcc",
+    "/assets/images/map.data.json": "e438dc80d76fc6bb7626cdd8b72265e4d0ddbdc5",
     "/assets/images/map.json": "28c627cbb55e1cd16ce3f8e30f29924ca0e69fbd",
     "/assets/images/minecraft/2021-12-10_20.08.21.png": "f50d51ffa5bf5d3deed65854e1b171e06071fd00",
     "/assets/images/minecraft/2021-12-10_20.12.16.png": "90f102b965a47d72589c27deebfc32cc2850e18c",
