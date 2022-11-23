@@ -15,7 +15,7 @@ export class ImageService {
 
   constructor(private http: HttpClient) {
     console.log('Fetching pre-compiled images...');
-    this.http.get('https://github.com/4H-Botsmiths/website/blob/gh-pages/assets/images/map.data.json?raw=true').subscribe((data: any) => {
+    this.http.get('assets/images/map.data.json').subscribe((data: any) => {
       console.log('Fetched pre-compiled images');
       this.images = data;
     });
