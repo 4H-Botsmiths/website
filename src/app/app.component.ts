@@ -4,6 +4,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, NavigationError, NavigationStart, Router } from '@angular/router';
 
 import { ColorSchemeService } from './color-scheme.service';
+import { ImageService } from './image.service';
 import { MetaService } from './meta.service';
 
 
@@ -16,7 +17,7 @@ declare const gtag: Function;
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  constructor(public colorScheme: ColorSchemeService, public router: Router, private metaService: MetaService, private activatedRoute: ActivatedRoute) { }
+  constructor(public colorScheme: ColorSchemeService, public router: Router, private metaService: MetaService, private activatedRoute: ActivatedRoute, private imageService: ImageService) { }
   /**
    * Update meta's and add route change listeners
    */
