@@ -3,6 +3,10 @@
   "name": "images",
   "children": [
     {
+      "path": "/assets/images/IMG_1009.jpeg",
+      "name": "IMG_1009.jpeg"
+    },
+    {
       "path": "/assets/images/fll",
       "name": "fll",
       "children": [
@@ -35,10 +39,6 @@
               "name": "AA9850F6-9859-4A14-BBA0-A0C32CD8F57B_1_105_c.jpeg"
             },
             {
-              "path": "/assets/images/fll/challenge/display.jpeg",
-              "name": "display.jpeg"
-            },
-            {
               "path": "/assets/images/fll/challenge/E1B26C77-E54F-4057-AB90-F8F79F90BE14_1_105_c.jpeg",
               "name": "E1B26C77-E54F-4057-AB90-F8F79F90BE14_1_105_c.jpeg"
             },
@@ -69,6 +69,10 @@
             {
               "path": "/assets/images/fll/challenge/IMG_3075.JPEG",
               "name": "IMG_3075.JPEG"
+            },
+            {
+              "path": "/assets/images/fll/challenge/display.jpeg",
+              "name": "display.jpeg"
             }
           ]
         },
@@ -94,10 +98,6 @@
         {
           "path": "/assets/images/frc/67968578230__BD77B0B3-D1AE-4690-A8A6-EC63E3C0B2C0.jpeg",
           "name": "67968578230__BD77B0B3-D1AE-4690-A8A6-EC63E3C0B2C0.jpeg"
-        },
-        {
-          "path": "/assets/images/frc/display.jpg",
-          "name": "display.jpg"
         },
         {
           "path": "/assets/images/frc/IMG_1007.jpeg",
@@ -134,6 +134,10 @@
         {
           "path": "/assets/images/frc/IMG_8144.jpg",
           "name": "IMG_8144.jpg"
+        },
+        {
+          "path": "/assets/images/frc/display.jpg",
+          "name": "display.jpg"
         }
       ]
     },
@@ -174,10 +178,6 @@
           "name": "8ebff3_db7f11f20d554b91b1cdf28f50fd7e7d~mv2.png"
         },
         {
-          "path": "/assets/images/ftc/display.JPG",
-          "name": "display.JPG"
-        },
-        {
           "path": "/assets/images/ftc/IMG_1264.jpeg",
           "name": "IMG_1264.jpeg"
         },
@@ -192,12 +192,12 @@
         {
           "path": "/assets/images/ftc/KIMG1233.JPG",
           "name": "KIMG1233.JPG"
+        },
+        {
+          "path": "/assets/images/ftc/display.JPG",
+          "name": "display.JPG"
         }
       ]
-    },
-    {
-      "path": "/assets/images/IMG_1009.jpeg",
-      "name": "IMG_1009.jpeg"
     },
     {
       "path": "/assets/images/logo.png",
@@ -228,12 +228,12 @@
           "name": "A_Minecraft_Xmas.png"
         },
         {
-          "path": "/assets/images/minecraft/display.png",
-          "name": "display.png"
-        },
-        {
           "path": "/assets/images/minecraft/Screen_Shot_2022-05-20_at_7.58.15_PM.png",
           "name": "Screen_Shot_2022-05-20_at_7.58.15_PM.png"
+        },
+        {
+          "path": "/assets/images/minecraft/display.png",
+          "name": "display.png"
         }
       ]
     },
@@ -250,20 +250,20 @@
           "name": "4-H.gif"
         },
         {
-          "path": "/assets/images/sponsors/andymark.jpg",
-          "name": "andymark.jpg"
-        },
-        {
-          "path": "/assets/images/sponsors/boeing.png",
-          "name": "boeing.png"
-        },
-        {
           "path": "/assets/images/sponsors/Microsoft.png",
           "name": "Microsoft.png"
         },
         {
           "path": "/assets/images/sponsors/NASA.png",
           "name": "NASA.png"
+        },
+        {
+          "path": "/assets/images/sponsors/andymark.jpg",
+          "name": "andymark.jpg"
+        },
+        {
+          "path": "/assets/images/sponsors/boeing.png",
+          "name": "boeing.png"
         },
         {
           "path": "/assets/images/sponsors/ni.jpg",
