@@ -10,8 +10,7 @@
       <h5 class="card-title" *ngIf="post.title" [innerHTML]="post.title"></h5>
       <h6 class="card-subtitle mb-2 text-muted"></h6>
       <p class="card-text" *ngIf="post.description" [innerHTML]="post.description"></p>
-      <a *ngFor="let link of (post.links || [])" class="card-link" [class.text-info]="colorScheme.darkMode" href="{{link.href}}"
-        target="_blank" [innerHTML]="link.name"></a>
+      <a *ngFor="let link of (post.links || [])" class="card-link" href="{{link.href}}" target="_blank" [innerHTML]="link.name"></a>
       <a *ngFor="let button of (post.buttons || [])" class="btn btn-primary" href="{{button.href}}" target="_blank"
         [innerHTML]="button.name"></a>
     </div>

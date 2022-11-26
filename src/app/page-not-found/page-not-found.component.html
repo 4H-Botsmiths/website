@@ -3,8 +3,7 @@
   <h2>Page Not Found</h2>
 </div>
 <div class="text-center" *ngIf="url" style="max-width: 100vw;">
-  <h3 *ngIf="countdown > 0">Redirecting to <a [routerLink]="url" [class.link-info]="colorScheme.darkMode"
-      class="h4">https://botsmiths.org{{url}}</a> in {{countdown}}
+  <h3 *ngIf="countdown > 0">Redirecting to <a [routerLink]="url" class="h4">https://botsmiths.org{{url}}</a> in {{countdown}}
   </h3>
   <h3 *ngIf="countdown === 0">Redirecting...</h3>
   <br>
@@ -14,7 +13,6 @@
   <br>
   <h4 *ngIf="urls.length">Maybe you wanted: </h4>
   <ul>
-    <li *ngFor="let url1 of urls" class="h5"><a [routerLink]="url1"
-        [class.link-info]="colorScheme.darkMode">https://www.botsmiths.org{{url1}}</a></li>
+    <li *ngFor="let url1 of urls" class="h5"><a [routerLink]="url1">https://www.botsmiths.org{{url1}}</a></li>
   </ul>
 </div>
