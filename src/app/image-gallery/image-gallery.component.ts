@@ -16,7 +16,7 @@ export class ImageGalleryComponent implements OnInit, AfterViewInit {
   public sortedImages: HTMLImageElement[] = [];
   constructor() {
   }
-  @ViewChild('grid') grid!: ElementRef;
+  @ViewChild('grid') grid!: ElementRef<HTMLDivElement>;
   ngAfterViewInit(): void {
     const interval = setInterval(() => {
       if (this.sortedImages.length) {

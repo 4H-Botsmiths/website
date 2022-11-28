@@ -38,7 +38,7 @@ export class SponsorsComponent implements OnInit, AfterViewInit {
       this.form.valid = this.form.companyName !== '' && this.form.amount >= 100 && (this.form.companyLogo ? this.isValidUrl(this.form.companyLogo) : true);
     });
   }
-  @ViewChild("modal") modal!: ElementRef;
+  @ViewChild("modal") modal!: ElementRef<HTMLDivElement>;
 
   /**
    * Open sponsor options modal if needed
@@ -48,11 +48,8 @@ export class SponsorsComponent implements OnInit, AfterViewInit {
     this.router.events.subscribe((event: any) => {
       if (event instanceof NavigationStart) {
         clearInterval(this.interval);
-        this.modal.nativeElement.rem;
-        // Show progress spinner or progress bar
       }
       if (event instanceof NavigationEnd) {
-        // Hide progress spinner or progress bar
         if (this.routerLinkActive('/sponsors/options') || this.routerLinkActive('/sponsors/contact-us')) {
           modal.show();
         }

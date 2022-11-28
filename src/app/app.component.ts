@@ -64,7 +64,7 @@ export class AppComponent implements OnInit {
     return this.router.isActive(link, { paths: 'subset', queryParams: 'subset', fragment: 'ignored', matrixParams: 'ignored' });
   }
   //@ViewChild("fllDropdown") fllDropdown!: ElementRef;
-  @ViewChild("programsDropdown") programsDropdown!: ElementRef;
+  @ViewChild("programsDropdown") programsDropdown!: ElementRef<HTMLAnchorElement>;
   /**
    * Close the navbar dropdowns if necessary
    */

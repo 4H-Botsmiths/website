@@ -22,7 +22,7 @@ export class ImageCarouselComponent implements AfterViewInit {
   private interval?: NodeJS.Timer;
   constructor(public colorScheme: ColorSchemeService) {
   }
-  @ViewChild("carousel") carousel!: ElementRef;
+  @ViewChild("carousel") carousel!: ElementRef<HTMLDivElement>;
   /**
    * Start carousel rotation
    */
