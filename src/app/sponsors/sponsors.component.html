@@ -1,7 +1,7 @@
 <div class="text-center">
   <h4>Thank you for your generous donation to our cause, we couldn't do it without you.</h4>
   <h5>Want to get your organization out their while also supporting our teams?</h5>
-  <a class="h5" [class.link-info]="colorScheme.darkMode" routerLink="./options">Become a sponsor</a>
+  <a class="h5" routerLink="./options">Become a sponsor</a>
 </div>
 <!-- Mail instructions pop-up -->
 <div class="modal fade" id="contactUsPopup" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
@@ -71,7 +71,7 @@
         <!-- Sponsorship Contact-Us Form -->
         <div class="container color-scheme-tertiary py-3" [style.display]="routerLinkActive('/sponsors/contact-us') ? 'block' : 'none'">
           <h3 class="text-center">Fill out the form below or contact us directly at <br>
-            <a href="mailto:snoco4htech@gmail.com" [class.link-info]="colorScheme.darkMode">snoco4htech@gmail.com</a>
+            <a href="mailto:snoco4htech@gmail.com">snoco4htech@gmail.com</a>
           </h3>
           <form>
             <div class="mb-3">
@@ -127,8 +127,7 @@
       <div class="accordion-body color-scheme-tertiary">
         <ul>
           <li *ngFor="let sponsorship of sponsor.sponsors">
-            <a *ngIf="sponsorship.link" [class.text-info]="colorScheme.darkMode" href="{{sponsorship.link}}"
-              target="_blank">{{sponsorship.sponsor}}</a>
+            <a *ngIf="sponsorship.link" href="{{sponsorship.link}}" target="_blank">{{sponsorship.sponsor}}</a>
             <span *ngIf="!sponsorship.link">{{sponsorship.sponsor}}</span>
           </li>
         </ul>
