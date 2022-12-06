@@ -43,7 +43,9 @@ export class PageNotFoundComponent implements OnInit, OnDestroy {
       }
     };
     findRoutes('');
-    if (this.urls.length) {
+    if (this.urls.length === 1) {
+      this.router.navigate([this.urls[0]]);
+    } else if (this.urls.length) {
       this.url = this.urls.shift();
       this.countdownRedirect();
     }
