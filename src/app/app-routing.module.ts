@@ -14,7 +14,6 @@ import { MinecraftComponent } from './programs/minecraft/minecraft.component';
 import { SponsorsComponent } from './sponsors/sponsors.component';
 
 
-
 export const routes: Routes = [
   {
     path: '', component: HomeComponent, data: {
@@ -117,7 +116,8 @@ export const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes, {
     scrollPositionRestoration: 'enabled',
-    onSameUrlNavigation: 'reload'
+    onSameUrlNavigation: 'reload',
+    useHash: true,
   })],
   exports: [RouterModule]
 })
