@@ -1,60 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://www.botsmiths.org/</loc>
+        <loc>https://www.botsmiths.org/#/</loc>
       </url>
 <url>
-        <loc>https://www.botsmiths.org/news/</loc>
+        <loc>https://www.botsmiths.org/#/news/</loc>
       </url>
 <url>
-        <loc>https://www.botsmiths.org/sponsors/</loc>
+        <loc>https://www.botsmiths.org/#/sponsors/</loc>
       </url>
 <url>
-        <loc>https://www.botsmiths.org/sponsors/options/</loc>
+        <loc>https://www.botsmiths.org/#/sponsors/options/</loc>
       </url>
 <url>
-        <loc>https://www.botsmiths.org/sponsors/contact-us/</loc>
+        <loc>https://www.botsmiths.org/#/sponsors/contact-us/</loc>
       </url>
 <url>
-        <loc>https://www.botsmiths.org/contact-us/</loc>
+        <loc>https://www.botsmiths.org/#/contact-us/</loc>
       </url>
 <url>
-        <loc>https://www.botsmiths.org/programs/minecraft/</loc>
+        <loc>https://www.botsmiths.org/#/programs/minecraft/</loc>
       </url>
 <url>
-        <loc>https://www.botsmiths.org/programs/fll/explore/</loc>
+        <loc>https://www.botsmiths.org/#/programs/fll/explore/</loc>
       </url>
 <url>
-        <loc>https://www.botsmiths.org/programs/fll/challenge/</loc>
+        <loc>https://www.botsmiths.org/#/programs/fll/challenge/</loc>
       </url>
 <url>
-        <loc>https://www.botsmiths.org/programs/ftc/</loc>
+        <loc>https://www.botsmiths.org/#/programs/ftc/</loc>
       </url>
 <url>
-        <loc>https://www.botsmiths.org/programs/frc/</loc>
+        <loc>https://www.botsmiths.org/#/programs/frc/</loc>
       </url>
 <url>
-        <loc>https://www.botsmiths.org/news/Come-See-Us-At-The-2022-Evergreen-State-Fair-Aug-25-30-and-Sept-1-5/</loc>
+        <loc>https://www.botsmiths.org/#/news/Explorers-of-the-Deep-December-17th/</loc>
       </url>
 <url>
-        <loc>https://www.botsmiths.org/news/Come-and-see-us-at-the-Kla-Ha-Ya-Days-Parade-on-Sunday-July-17,-2022/</loc>
+        <loc>https://www.botsmiths.org/#/news/Come-See-Us-At-The-2022-Evergreen-State-Fair-Aug-25-30-and-Sept-1-5/</loc>
       </url>
 <url>
-        <loc>https://www.botsmiths.org/news/Come-See-Us-At-The-Evergreen-State-Fair-September-3rd-and-4th/</loc>
+        <loc>https://www.botsmiths.org/#/news/Come-and-see-us-at-the-Kla-Ha-Ya-Days-Parade-on-Sunday-July-17,-2022/</loc>
       </url>
 <url>
-        <loc>https://www.botsmiths.org/news/Launching-the-2021-Season/</loc>
+        <loc>https://www.botsmiths.org/#/news/Come-See-Us-At-The-Evergreen-State-Fair-September-3rd-and-4th/</loc>
       </url>
 <url>
-        <loc>https://www.botsmiths.org/news/FIRST-Update-for-May-2020/</loc>
+        <loc>https://www.botsmiths.org/#/news/Launching-the-2021-Season/</loc>
       </url>
 <url>
-        <loc>https://www.botsmiths.org/news/Final-Testing!/</loc>
+        <loc>https://www.botsmiths.org/#/news/FIRST-Update-for-May-2020/</loc>
       </url>
 <url>
-        <loc>https://www.botsmiths.org/news/Infinite-Recharge-Launches-2020!/</loc>
+        <loc>https://www.botsmiths.org/#/news/Final-Testing!/</loc>
       </url>
 <url>
-        <loc>https://www.botsmiths.org/news/Botsmiths-Craft-2019-Bot/</loc>
+        <loc>https://www.botsmiths.org/#/news/Infinite-Recharge-Launches-2020!/</loc>
+      </url>
+<url>
+        <loc>https://www.botsmiths.org/#/news/Botsmiths-Craft-2019-Bot/</loc>
       </url>
     </urlset>
