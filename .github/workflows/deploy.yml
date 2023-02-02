@@ -51,7 +51,7 @@ jobs:
         with:
           ref: 'gh-pages'
       - name: Update 404 Pages
-        run: echo '<head><title>Forwarding...</title><script>if (!window.location.href.match(/\/#/)) { window.location.href = window.location.origin + '/#' + window.location.pathname + window.location.search; }</script><head><body></body>' > 404.html
+        run: echo '<head><title>Forwarding...</title><script>if (!window.location.href.match(/\/#/)) { window.location.href = window.location.origin + "/#" + window.location.pathname + window.location.search; }</script><head><body></body>' > 404.html
       - run: |
           git config --local user.email "action@github.com"
           git config --local user.name "github-actions"
