@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1675365570171,
+  "timestamp": 1675450920385,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -262,7 +262,7 @@
     "/assets/splash_screens/iPhone_8__iPhone_7__iPhone_6s__iPhone_6__4.7__iPhone_SE_portrait.png": "806008f067b3decbb9a9d39341e9bcdc2b761bbc",
     "/assets/splash_screens/icon.png": "e05a53de3e20298129ef5b70b01972a8210a5ef0",
     "/favicon.ico": "0b66fb1fd1372fff104df9d4e2e2007de395569e",
-    "/index.html": "043f59d8a0b57265e3016d8092c0dd295c5354a3",
+    "/index.html": "38843564bf6368ee58603ae01492b28e02c65fe6",
     "/main.7a179397d57eb44b.js": "93889c8a9bc34704d710f7efadf93327cc05f680",
     "/polyfills.945ee4fee6407146.js": "86e812eacc21bf09b6cb77f2f604324680619500",
     "/runtime.c0ffee8af23fa432.js": "1c88d3a958b5cb5f90efb80777435d9abf760a67",
