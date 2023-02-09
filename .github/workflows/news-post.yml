@@ -60,7 +60,7 @@ jobs:
           news.unshift(input)
           console.log(input);
           console.log(news);
-          require('fs').writeFileSync('./src/app/news/news.json', news);
+          require('fs').writeFileSync('./src/app/news/news.json', JSON.stringify(news, null, 2));
           return JSON.stringify(news, null, 2);
 
         result-encoding: string
