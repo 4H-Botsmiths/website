@@ -1,0 +1,75 @@
+on:
+  workflow_dispatch:
+    inputs:
+      title:
+        description: 'Title'
+        required: true
+        type: string
+      header:
+        description: 'Header'
+        required: false 
+        type: string 
+      image:
+        description: 'Image'
+        required: false 
+        type: string
+      categories:
+        description: 'Post Categories (", " seperated)'
+        type: string
+        required: false
+      description:
+        description: 'Description'
+        type: string
+        required: false
+      links:
+        description: 'Links (Format: ${name}:${href}; ", " Seperated)'
+        type: string
+        required: false
+      buttons:
+        description: 'Buttons (Format: ${name}:${href}; ", " Seperated)'
+        type: string
+        required: false
+      footer:
+        description: 'Footer (Typically Date Posted)'
+        type: string
+        required: false
+
+jobs:
+  print-tag:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/github-script@v6
+      id: set-result
+      with:
+        script: |
+          const input = context.payload.inputs;
+          if(input.categories) input.categories = input.categories.split(', ');
+          if(input.links) {
+            input.links = input.links.split(', ');
+            input.links.map(link=>{return {name: link.split(':')[0], href: link.split(':')[1]}});
+          }
+          if(input.buttons) {
+            input.buttons = input.buttons.split(', ');
+            input.buttons.map(link=>{return {name: link.split(':')[0], href: link.split(':')[1]}});
+          }
+          const news = require('./src/app/news/news.json');
+          news.unshift(input)
+          console.log(input);
+          console.log(news);
+          return JSON.stringify(news, null, 2);
+
+        result-encoding: string
+    - name: Get result
+      run: echo "${{steps.set-result.outputs.result}}" > ./src/app/news/news.json
+    - name: Commit Changes
+      if: false
+      run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "github-actions"
+          git add -A
+          git commit -m "Added Post"
+    - name: Push changes
+      if: false
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GH_TOKEN }}
