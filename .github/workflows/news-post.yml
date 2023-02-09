@@ -1,5 +1,5 @@
 name: Create Post
-run-name: ${{ context.payload.inputs.title }}
+run-name: ${{ inputs.title }}
 on:
   workflow_dispatch:
     inputs:
