@@ -1,3 +1,4 @@
+name: Create Post
 on:
   workflow_dispatch:
     inputs:
@@ -38,6 +39,7 @@ jobs:
   print-tag:
     runs-on: ubuntu-latest
     steps:
+    - run: ls
     - uses: actions/github-script@v6
       id: set-result
       with:
@@ -52,7 +54,7 @@ jobs:
             input.buttons = input.buttons.split(', ');
             input.buttons.map(link=>{return {name: link.split(':')[0], href: link.split(':')[1]}});
           }
-          const news = require('./src/app/news/news.json');
+          const news = require('/src/app/news/news.json');
           news.unshift(input)
           console.log(input);
           console.log(news);
