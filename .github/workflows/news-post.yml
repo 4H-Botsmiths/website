@@ -41,7 +41,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - run: ls
+    - run: npm install
     - uses: actions/github-script@v6
       id: set-result
       with:
@@ -60,10 +60,12 @@ jobs:
           news.unshift(input)
           console.log(input);
           console.log(news);
+          fs.writeFileSync('./src/app/news/news.json', news);
           return JSON.stringify(news, null, 2);
 
         result-encoding: string
     - name: Get result
+      if: false
       run: echo "${{steps.set-result.outputs.result}}" > ./src/app/news/news.json
     - name: Commit Changes
       if: false
