@@ -64,18 +64,13 @@ jobs:
           return JSON.stringify(news, null, 2);
 
         result-encoding: string
-    - name: Get result
-      if: false
-      run: echo "${{steps.set-result.outputs.result}}" > ./src/app/news/news.json
     - name: Commit Changes
-      if: false
       run: |
           git config --local user.email "action@github.com"
           git config --local user.name "github-actions"
           git add -A
           git commit -m "Added Post"
     - name: Push changes
-      if: false
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GH_TOKEN }}
