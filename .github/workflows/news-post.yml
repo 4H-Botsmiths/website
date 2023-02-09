@@ -1,4 +1,5 @@
 name: Create Post
+run-name: ${{ context.payload.inputs.title }}
 on:
   workflow_dispatch:
     inputs:
@@ -36,9 +37,10 @@ on:
         required: false
 
 jobs:
-  print-tag:
+  post:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v3
     - run: ls
     - uses: actions/github-script@v6
       id: set-result
@@ -54,7 +56,7 @@ jobs:
             input.buttons = input.buttons.split(', ');
             input.buttons.map(link=>{return {name: link.split(':')[0], href: link.split(':')[1]}});
           }
-          const news = require('/src/app/news/news.json');
+          const news = require('./src/app/news/news.json');
           news.unshift(input)
           console.log(input);
           console.log(news);
